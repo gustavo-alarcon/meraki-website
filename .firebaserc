@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mandaditos-e6b53": {
+      "hosting": {
+        "meraki-web-v9": [
+          "mandaditos-e6b53"
+        ]
+      }
+    }
+  }
+}
