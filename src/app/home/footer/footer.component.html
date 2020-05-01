@@ -1,0 +1,49 @@
+<footer class="footer">
+  <div class="footer-menu">
+    <ul>
+      <li>Aplicaciones</li>
+      <li>Big Data</li>
+      <li>Websites</li>
+      <li>I2OT</li>
+      <li>Nosotros</li>
+    </ul>
+  </div>
+
+  <div class="footer-contact">
+    <div class="contact-title">
+      <h2>Hagamos realidad esa idea!</h2>
+      <p>Envíanos un mensaje</p>
+    </div>
+    <form [formGroup]="contactFormGroup">
+      <mat-form-field>
+        <mat-label>Correo</mat-label>
+        <input matInput color="primary" type="text" formControlName="mail" placeholder="nombre@empresa.com"
+          autocomplete="off">
+      </mat-form-field><br>
+
+      <mat-form-field>
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput formControlName="messege" cols="10" rows="5"></textarea>
+      </mat-form-field><br>
+
+      <div class="contact-actions">
+        <span></span>
+        <button mat-raised-button color="secondary" (click)="submit()" aria-label="submit button">Enviar</button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="footer-partner">
+    <a href="https://cloud.withgoogle.com/partners/detail/?id=meraki-solutions&hl=es-419" target="_blank"
+      rel="noopener"><img src="../../assets/images/partner.png" alt="google cloud partner"></a>
+    <a href="https://greengeeks.com/track/merakisolutions" target="_blank" rel="noopener"><img
+        src="../../assets/images/green-tag-2.png" alt="green geeks partner"></a>
+  </div>
+
+</footer>
+
+<div class="footer-copy">
+  <p>Todos los derechos reservados. Diseñado y desarrollado por Meraki Solutions</p>
+</div>

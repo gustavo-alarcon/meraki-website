@@ -1,0 +1,78 @@
+<div class="w3-row">
+  <div class="w3-col s1 m1 l2">
+    <p><small style="padding: 1em;">V1.0.0</small></p>
+  </div>
+  <div class="w3-col s10 m10 l8" style="height:100vh">
+    <div class="landing">
+      <div class="container-partner" data-aos="fade-left">
+        <a href="https://cloud.withgoogle.com/partners/detail/?id=meraki-solutions&hl=es-419" target="_blank" rel="noopener"><img
+            src="../../assets/images/partner.png" alt="google cloud partner"></a>
+        <a href="https://greengeeks.com/track/merakisolutions" target="_blank" rel="noopener"><img
+            src="../../assets/images/green-tag-2.png" alt="green geeks partner"></a>
+      </div>
+      <div class="bg"></div>
+      <div class="container-title" data-aos="fade-up" data-aos-duration="1000">
+        <p>Un aliado en soluciones tecnológicas</p>
+        <img src="../../assets/images/letters.svg" alt="meraki solutions logo">
+        <p>La tecnología es una ciencia, pero conseguir que las personas la usen es un arte </p>
+        <p style="color: #f8bb16; margin-top: 2em;"><small>Mike Arauz</small></p>
+        <!-- <p class="w3-hide-small">"Para situaciones sin precedentes, se necesitan soluciones sin precedentes"</p>
+        <p class="w3-hide-small">- María Antonieta Alva, Ministra de Economia, Perú</p> -->
+      </div>
+      <div id="ms_image_container" class="ms-image-container" data-aos="fade-right" data-aos-duration="1000">
+        <div id="ms_image" class="ms-image"></div>
+      </div>
+
+      <div id="nav_landing" class="container-nav-landing w3-hide-small">
+        <nav>
+          <li id="nav_logo" data-aos="fade-in"><a href="#ms_background"><img src="../../assets/images/meraki-logo.svg"
+                alt="meraki solutions logo" style="height: 40px;"></a></li>
+
+          <li (click)="changeTopic('app')" routerLink="applications">Aplicaciones</li>
+          <li (click)="changeTopic('bd')" routerLink="big-data">Big Data</li>
+          <!-- <li (click)="changeTopic('ml')">Machine Learning</li> -->
+          <li (click)="changeTopic('web')">Websites</li>
+          <li (click)="changeTopic('i2ot')">I2OT</li>
+          <li (click)="changeTopic('us')">Nosotros</li>
+        </nav>
+      </div>
+
+      <div id="nav_landing_small" class="container-nav-landing w3-hide-medium w3-hide-large" data-aos="fade-down">
+        <nav>
+          <a href="#ms_background"><img src="../../assets/images/meraki-logo.svg" alt="meraki solutions logo"
+              style="height: 50px;"></a>
+          <span style="flex: auto 1 1"></span>
+          <button mat-icon-button [matMenuTriggerFor]="appMenu" style="background: transparent;" aria-label="menu">
+            <mat-icon style="color: white;">menu</mat-icon>
+          </button>
+
+          <mat-menu #appMenu="matMenu">
+            <button mat-menu-item (click)="changeTopic('app')" aria-label="aplicaciones">Aplicaciones</button>
+            <button mat-menu-item (click)="changeTopic('bd')" aria-label="big data">Big Data</button>
+            <button mat-menu-item (click)="changeTopic('web')" aria-label="website">Websites</button>
+            <button mat-menu-item (click)="changeTopic('i2ot')" aria-label="i2ot">I2OT</button>
+            <button mat-menu-item (click)="changeTopic('us')" aria-label="nosotros">Nosotros</button>
+          </mat-menu>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col s1 m1 l2">
+    <p> </p>
+  </div>
+</div>
+
+<div class="w3-row">
+  <div class="w3-col s1 m1 l2">
+    <p> </p>
+  </div>
+  <div class="w3-col s10 m10 l8">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="w3-col s1 m1 l2">
+    <p> </p>
+  </div>
+</div>
+
+<app-footer></app-footer>
+   

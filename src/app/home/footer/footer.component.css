@@ -1,0 +1,138 @@
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 2em 2em;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: solid 1px #2b2b2b;
+}
+
+/* MENU */
+
+.footer .footer-menu ul {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 1.5em;
+  line-height: 2em;
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+}
+
+.footer .footer-menu ul li{
+  list-style: none;
+  width: fit-content;
+  transition: ease-in 0.3s;
+  cursor: pointer;
+}
+
+.footer .footer-menu ul li:hover{
+  color: white;
+  transform: translateX(10%);
+}
+
+/* CONTACT */
+.footer .footer-contact {
+  display: flex;
+  align-items: flex-start;
+  padding: 1em 3em;
+  background: white;
+  width: 50%;
+  -webkit-filter: drop-shadow(5px 5px 5px #222 );
+  filter: drop-shadow(5px 5px 5px #222);
+  border-radius: 10px;
+}
+
+.footer .footer-contact .contact-title {
+  width: 43%;
+  margin: 0 2em 0 1em;
+}
+
+.footer .footer-contact .contact-title h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 2em;
+  color: var(--color-text);
+}
+
+.footer .footer-contact form {
+  width: 100%;
+}
+
+.footer .footer-contact form mat-form-field{
+  width: 100%;
+}
+
+.footer .footer-contact .contact-actions {
+  display: flex;
+}
+
+.footer .footer-contact .contact-actions span {
+  flex: auto 1 1;
+}
+
+/* PARTNER */
+
+.footer .footer-partner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .footer-partner a:nth-of-type(1) img {
+  padding: 1em;
+  width: 200px;
+}
+
+.footer .footer-partner a:nth-of-type(2) img {
+  padding: 1em;
+  width: 150px;
+}
+
+/* COPY RIGHT */
+.footer-copy{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.footer-copy p{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+  line-height: 2em;
+  margin: 0;
+  color: var(--color-text);
+}
+
+@media(max-width:600px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer .footer-menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer .footer-contact {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 2em;
+  }
+
+  .footer .footer-contact .contact-title {
+    width: 100%;
+  }
+
+  .footer .footer-partner {
+    width: 100%;
+    padding-top: 2em;
+    display: flex;
+    justify-content: center;
+  }
+
+}

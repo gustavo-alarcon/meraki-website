@@ -1,4 +1,131 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/css/w3.css';
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 14px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    --color-text: #424242;
+    --color-bg: #111111;
+    --color-link: #999;
+    --color-link-hover: #fff;
+    --color-primary: #EEFE34;
+    --color-secondary: #EEFE34;
+    --color-description: #3b343a;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+html, body { height: 100%; }
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    color: #5f6368;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    color: #5f6368;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111111;
+}
+ .loader div {
+     position: relative;
+     width: 200px;
+     height: 200px;
+     border: 4px solid #111111;
+     overflow: hidden;
+     border-radius: 50%;
+     box-shadow:    -5px -5px 5px rgba(255, 255, 255, 0.1),
+                    10px 10px 10px rgba(0, 0, 0, 0.4),
+                    inset -5px -5px 5px rgba(255, 255, 255, 0.1),
+                    inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+ }
+
+ .loader div:before {
+     content: '';
+     position: absolute;
+     top: 25px;
+     left: 25px;
+     right: 25px;
+     bottom: 25px;
+     z-index: 10;
+     background: #111111;
+     border-radius: 50%;
+     border: 2px solid #111111;
+     box-shadow:    inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+                    inset 3px 3px 5px rgba(0, 0, 0, 0.4);
+ }
+
+ .loader div:after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    z-index: 20;
+    padding: 2px 2px;
+    background-image: url('./assets/images/shield.png');
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    /* border: 2px solid #111111; */
+    box-shadow:    inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+                   inset 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+ .loader div span {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     border-radius: 50%;
+     z-index: 1;
+     background: linear-gradient(#B4822B, #FCEFA3, #B4822B);
+     filter: blur(20px);
+     animation: animate 0.5s linear infinite;
+ }
+
+
+ @keyframes animate {
+     0%
+     {
+         transform: rotate(0deg);
+     }
+     100%
+     {
+         transform: rotate(360deg);
+     }
+ }
+
+ .mat-form-field-empty .mat-form-field-label {
+    color: #c4c4c4;
+  }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
