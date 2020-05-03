@@ -23,7 +23,7 @@
 
 .app-segment-1 {
   position: relative;
-  margin-top: 0%;
+  padding-top: 10%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -44,9 +44,10 @@
 
 .segment-text img {
   position: relative;
+  padding: 2em 1em 1em 1em;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+  width: 60%;
 }
 
 .app-segment-1 .segment-image {
@@ -86,7 +87,7 @@
 
 .app-segment-2 .segment-image {
   position: relative;
-  width: 40%;
+  width: 35%;
   transition: ease-in-out 0.3s;
 }
 
@@ -182,7 +183,7 @@
 
 .app-segment-3 .segment-image figcaption {
   position: absolute;
-  bottom: 10%;
+  bottom: 20%;
 	text-align: left;
 }
 
@@ -280,11 +281,137 @@
   transform: translateY(-10%);
 }
 
+/* BIG DATA SOLUTIONS */
+.bd-segment-5 {
+  position: relative;
+  margin-top: 10%;
+  padding-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: solid 1px red; */
+}
+
+.bd-segment-5 .segment-text {
+  position: relative;
+  width: 50%;
+  padding: 0 2em;
+  align-self: center;
+  /* border: solid 1px green; */
+}
+
+.bd-segment-5 .container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 0 40px; */
+}
+
+.bd-segment-5 .container .box {
+  position: relative;
+  height: 400px;
+  margin: 2em 1em;
+  background: #424242;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid #000; */
+}
+
+.bd-segment-5 .container .box .content {
+  position: relative;
+  padding: 20px;
+  
+}
+
+.bd-segment-5 .container .box .content h2{
+  position: absolute;
+  top: -60px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  font-size: 10em;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  color: #c4c4c41f;
+  transition: ease-in-out 0.5s;
+}
+
+.bd-segment-5 .container .box:hover .content h2{
+  top: -120px;
+}
+
+.bd-segment-5 .container .box .content h3{
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+.bd-segment-5 .container .box .content p{
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 1em;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+.bd-segment-5 .container .box:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #f8bb16;
+  transform: skew(2deg, 2deg);
+  z-index: -1;
+}
+
+.bd-segment-5 .container .box .content a {
+  position: relative;
+  border: 1px solid #ffffff;
+  padding: 1.5em;
+  font-size: 0.5em 1em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  top: -50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-in-out 0.5s;
+  cursor: pointer;
+}
+
+.bd-segment-5 .container .box:hover .content a{
+  top: 50px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.bd-segment-5 .container .box .content a:hover {
+  background: #f8bb16;
+  color: #222;
+  border: 1px solid #222;
+}
+
 
 @media(max-width:600px) {
 
   .app-segment-1 {
     display: block;
+  }
+
+  #app_content .app-bg{
+    font-size: 10vh;
+    top: -1%;
   }
 
   .app-segment-1 .segment-text{
@@ -335,6 +462,14 @@
 
   .app-segment-4 .app-card span:nth-of-type(2){
     font-size: 1.5em;
+  }
+
+  .bd-segment-5 .container {
+    flex-direction: column;
+  }
+
+  .bd-segment-5 .app-bg {
+    font-size: 10vh !important;
   }
 
 

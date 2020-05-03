@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   content: string = 'app';
 
   constructor(
-    private route: Router
+    private route: Router,
   ) {
   }
 
@@ -37,8 +37,8 @@ export class HomeComponent implements OnInit {
     let navbar_small = document.getElementById('nav_landing_small');
 
 
-
-    console.log(window.innerWidth, window.innerHeight);
+    // setting landing image
+    this.changeTopic(this.route.url.split('/')[2]);
 
     window.addEventListener('scroll', () => {
       this.scrollValue = window.scrollY;
@@ -74,22 +74,24 @@ export class HomeComponent implements OnInit {
 
   changeTopic(topic: string): void {
 
-    if (topic == 'app') {
+    if (topic == 'applications') {
       this.image.style.backgroundImage = 'url(../../assets/images/app-white.jpg)';
     }
 
-    if (topic == 'bd') {
+    if (topic == 'big-data') {
       this.image.style.backgroundImage = 'url(../../assets/images/bd-white.jpg)';
     }
 
-    if (topic == 'web') {
+    if (topic == 'websites') {
       this.image.style.backgroundImage = 'url(../../assets/images/web-white.jpg)';
-      this.content = 'web';
     }
 
     if (topic == 'i2ot') {
       this.image.style.backgroundImage = 'url(../../assets/images/i2ot-white.jpg)';
-      this.content = 'i2ot';
+    }
+
+    if (topic == 'about-us') {
+      this.image.style.backgroundImage = 'url(../../assets/images/i2ot-white.jpg)';
     }
 
   }

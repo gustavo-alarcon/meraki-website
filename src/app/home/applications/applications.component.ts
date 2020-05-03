@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { take } from 'rxjs/operators'
+
+import { ContactComponent } from "../contact/contact.component";
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-applications',
   templateUrl: './applications.component.html',
@@ -35,7 +40,10 @@ export class ApplicationsComponent implements OnInit {
 
   projectDescription: string = this.appProjectContent[0];
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog,
+    private snackbar: MatSnackBar
+  ) { }
 
   ngOnInit() {
   }
@@ -43,13 +51,25 @@ export class ApplicationsComponent implements OnInit {
   ngAfterViewInit() {
     this.app_proj_image = document.getElementById('app_projects_image');
     this.app_proj_image_mobile = document.getElementById('app_projects_image_mobile');
-
   }
 
   changeAppProjectImage(index: number) {
     this.app_proj_image.src = this.appProjects[index];
     this.app_proj_image_mobile.src = this.appProjectsMobile[index];
     this.projectDescription = this.appProjectContent[index];
+  }
+
+  openContact(subject: string): void {
+    this.dialog.open(ContactComponent, {
+      data: subject
+    }).afterClosed()
+      .pipe(
+        take(1)
+      ).subscribe(res => {
+        if(res){
+          this.snackbar.open('Mensaje enviado. Nos pondremos en contacto lo antes posible!', 'Aceptar')
+        }
+      })
   }
 
 }

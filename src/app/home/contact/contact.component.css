@@ -1,0 +1,21 @@
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 2em;
+  color: var(--color-text);
+  border-bottom: 1px solid #424242;
+  max-width: 350px;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-size: 1em;
+  line-height: 1.2em;
+  color: var(--color-text);
+  max-width: 350px;
+}
+
+.contact-input  {
+  min-width: 350px;
+}
