@@ -90,6 +90,27 @@
   width: 150px;
 }
 
+/* CONTACT */
+.contact__title {
+  color: white;
+}
+
+.contact__list {
+  padding: 0;
+  margin: 0;
+}
+
+.contact__item {
+  list-style: none;
+  padding: 0.5em 0;
+}
+
+.contact__icon {
+  vertical-align: middle;
+  margin-right: 1em;
+  color: #f8bb16;
+}
+
 /* COPY RIGHT */
 .footer-copy{
   display: flex;

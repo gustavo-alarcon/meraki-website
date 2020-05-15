@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { take } from 'rxjs/operators'
+import { Title, Meta } from '@angular/platform-browser';
 
 import { ContactComponent } from "../contact/contact.component";
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -12,13 +13,16 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ApplicationsComponent implements OnInit {
 
+  title = '🥇Aplicaciones móviles en Arequipa para empresas, desarrollo de aplicaciones, diseño de aplicaciones, aplicaciones pwa, aplicaciones web en arequipa, aplicaciones arequipa';
+  description = 'Desarrollo, diseño y programación de apps móviles para negocios✅, capta más clientes mostrando productos o servicios en una App móvil con desarrollo a medida';
+
   app_proj_image: any;
   app_proj_image_mobile: any;
 
   appProjects: Array<string> = [
     '../../assets/images/meraki-delivery-app.jpg',
     '../../assets/images/almacenes-la-joya.jpg',
-    '../../assets/images/standard-jobs-la-joya.jpg',
+    '../../assets/images/standard-jobs-la-joya.jpg'
   ]
 
   appProjectsMobile: Array<string> = [

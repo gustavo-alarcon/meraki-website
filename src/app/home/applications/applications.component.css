@@ -11,7 +11,7 @@
   top: -3%;
   left: 0;
   font-family: 'Poppins', sans-serif;
-  font-size: 25vh;
+  font-size: 15vw;
   font-weight: 900;
   color: rgba(0, 0, 0, 0.5);
   z-index: -1;
@@ -39,7 +39,8 @@
 }
 
 .segment-text h3{
-  font-size: 2.5em;
+  font-size: 3.5em;
+  color: #fff;
 }
 
 .segment-text img {
@@ -52,6 +53,7 @@
 .app-segment-1 .segment-image {
   position: relative;
   width: 50%;
+  padding: 0 2em;
   transition: ease-in-out 0.3s;
 }
 
@@ -67,10 +69,9 @@
 
 .app-segment-2 {
   position: relative;
-  /* border: solid 1px green; */
   margin-top: 10%;
   display: flex;
-  align-items: initial;
+  align-items: center;
   justify-content: space-evenly;
   /* height: 100vh; */
 }
@@ -81,12 +82,12 @@
   padding: 0 2em;
   order: 2;
   align-self: center;
-  /* border: solid 1px green; */
 }
 
 .app-segment-2 .segment-image {
   position: relative;
-  width: 40%;
+  width: 50%;
+  padding: 0 2em;
   transition: ease-in-out 0.3s;
 }
 
@@ -257,7 +258,7 @@
 }
 
 .app-segment-4 .app-card span:nth-of-type(1){
-  font-size: 9em;
+  font-size: 9vw;
   line-height: 10px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
@@ -265,7 +266,7 @@
 }
 
 .app-segment-4 .app-card span:nth-of-type(2){
-  font-size: 2em;
+  font-size: 2vw;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   width: 45%;
@@ -341,7 +342,7 @@
 .bd-segment-5 .container .box .content h3{
   margin: 0 0 10px;
   padding: 0;
-  font-size: 24px;
+  font-size: 2em;
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
@@ -401,7 +402,17 @@
     display: block;
   }
 
+  #app_content .app-bg{
+    font-size: 19vw;
+    top: -1%;
+  }
+
   .app-segment-1 .segment-text{
+    width: 100%;
+  }
+
+  .app-segment-1 .segment-text h3{
+    font-size: 2.3em;
     width: 100%;
   }
 
@@ -414,6 +425,11 @@
   }
 
   .app-segment-2 .segment-text{
+    width: 100%;
+  }
+
+  .app-segment-2 .segment-text h3{
+    font-size: 2.3em;
     width: 100%;
   }
 
@@ -444,11 +460,11 @@
   }
 
   .app-segment-4 .app-card span:nth-of-type(1){
-    font-size: 6em;
+    font-size: 20vw;
   }
 
   .app-segment-4 .app-card span:nth-of-type(2){
-    font-size: 1.5em;
+    font-size: 6vw;
   }
 
   .bd-segment-5 .container {
@@ -457,6 +473,14 @@
 
   .bd-segment-5 .app-bg {
     font-size: 10vh !important;
+  }
+
+  .bd-segment-5 .container .box:hover .content h2{
+    top: -80px;
+  }
+
+  .bd-segment-5 .container .box:hover .content a{
+    top: 22px;
   }
 
 

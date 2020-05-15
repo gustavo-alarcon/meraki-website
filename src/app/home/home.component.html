@@ -1,6 +1,6 @@
 <div class="w3-row">
   <div class="w3-col s1 m1 l2">
-    <p><small style="padding: 1em;">V1.1.1</small></p>
+    <p><small style="padding: 1em;">V1.1.2</small></p>
   </div>
   <div class="w3-col s10 m10 l8" style="height:100vh">
     <div class="landing">
@@ -26,11 +26,14 @@
           <li id="nav_logo" data-aos="fade-in"><a href="#ms_background"><img src="../../assets/images/meraki-logo.svg"
                 alt="meraki solutions logo" style="height: 40px;"></a></li>
 
-          <li (click)="changeTopic('app')" routerLink="applications">Aplicaciones</li>
-          <li (click)="changeTopic('bd')" routerLink="big-data">Big Data</li>
-          <li (click)="changeTopic('web')" routerLink="websites">Websites</li>
-          <li (click)="changeTopic('i2ot')" routerLink="i2ot">I2OT</li>
-          <li (click)="changeTopic('us')" routerLink="about-us">Nosotros</li>
+          <li (click)="changeTopic('applications')" routerLinkActive="link--active"  routerLink="applications">Aplicaciones</li>
+          <li (click)="changeTopic('big-data')" routerLinkActive="link--active" routerLink="big-data">Big Data</li>
+          <li matTooltip="En actualización" aria-label="link en actualización"> Websites</li>
+          <li matTooltip="En actualización" aria-label="link en actualización"> I2OT</li>
+          <li matTooltip="En actualización" aria-label="link en actualización"> Nosotros</li>
+          <!-- <li (click)="changeTopic('websites')" routerLinkActive="link--active" routerLink="websites" disabled>Websites</li>
+          <li (click)="changeTopic('i2ot')" routerLinkActive="link--active" routerLink="i2ot" disabled>I2OT</li>
+          <li (click)="changeTopic('about-us')" routerLinkActive="link--active" routerLink="about-us" disabled>Nosotros</li> -->
         </nav>
       </div>
 
@@ -44,11 +47,14 @@
           </button>
 
           <mat-menu #appMenu="matMenu">
-            <button mat-menu-item (click)="changeTopic('app')" aria-label="aplicaciones" routerLink="applications">Aplicaciones</button>
-            <button mat-menu-item (click)="changeTopic('bd')" aria-label="big data" routerLink="big-data">Big Data</button>
-            <button mat-menu-item (click)="changeTopic('web')" aria-label="website" routerLink="websites">Websites</button>
-            <button mat-menu-item (click)="changeTopic('i2ot')" aria-label="i2ot" routerLink="i2ot">I2OT</button>
-            <button mat-menu-item (click)="changeTopic('us')" aria-label="nosotros" routerLink="about-us">Nosotros</button>
+            <button mat-menu-item (click)="changeTopic('applications')" aria-label="aplicaciones" routerLink="applications">Aplicaciones</button>
+            <button mat-menu-item (click)="changeTopic('big-data')" aria-label="big data" routerLink="big-data">Big Data</button>
+            <button mat-menu-item disabled matTooltip="En actualización" aria-label="link en actualización">Websites</button>
+            <button mat-menu-item disabled matTooltip="En actualización" aria-label="link en actualización">I2OT</button>
+            <button mat-menu-item disabled matTooltip="En actualización" aria-label="link en actualización">Nosotros</button>
+            <!-- <button mat-menu-item (click)="changeTopic('websites')" aria-label="website" routerLink="websites" disabled>Websites</button>
+            <button mat-menu-item (click)="changeTopic('i2ot')" aria-label="i2ot" routerLink="i2ot" disabled>I2OT</button>
+            <button mat-menu-item (click)="changeTopic('about-us')" aria-label="nosotros" routerLink="about-us" disabled>Nosotros</button> -->
           </mat-menu>
         </nav>
       </div>
