@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SeoService } from './core/seo.service';
+// FIREBASE MODULES
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule} from '@angular/fire/storage';
 
 
 @NgModule({
@@ -18,6 +22,9 @@ import { SeoService } from './core/seo.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'merakisolutionsweb'),
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireStorageModule,
   ],
   providers: [
     SeoService
