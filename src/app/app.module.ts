@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SeoService } from './core/seo.service';
+import { WindowRefService } from './core/window-ref.service';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SeoService } from './core/seo.service';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
-    SeoService
+    SeoService,
+    WindowRefService
   ],
   bootstrap: [AppComponent]
 })
