@@ -5,6 +5,8 @@ import { take } from 'rxjs/operators'
 
 import { ContactComponent } from "../contact/contact.component";
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { SeoService } from 'src/app/core/seo.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-big-data',
@@ -13,22 +15,22 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class BigDataComponent implements OnInit {
 
-  app_proj_image: any;
-  app_proj_image_mobile: any;
+  bd_proj_image: any;
+  bd_proj_image_mobile: any;
 
-  appProjects: Array<string> = [
+  bdProjects: Array<string> = [
     '../../assets/images/bd-proj-1.jpg',
     '../../assets/images/bd-proj-2.jpg',
     '../../assets/images/bd-proj-3.jpg',
   ]
 
-  appProjectsMobile: Array<string> = [
+  bdProjectsMobile: Array<string> = [
     '../../assets/images/bd-proj-mobile-1.jpg',
     '../../assets/images/bd-proj-mobile-2.jpg',
     '../../assets/images/bd-proj-mobile-3.jpg',
   ]
 
-  appProjectContent: Array<string> = [
+  bdProjectContent: Array<string> = [
     'El taller de mecanizado y metalizado, tiene a cargo uno de los puntos más importantes dentro de proceso de recuperación, \
     y poder simular y predecir si van a cumplir con la demanda semanal, es clave para tomar las mejores desiciones.',
 
@@ -39,25 +41,47 @@ export class BigDataComponent implements OnInit {
     insumos consumidos por trabajo, pudiendo generar recetas de insumos y mejorar aun más los tiempos en logística'
   ]
 
-  projectDescription: string = this.appProjectContent[0];
+  projectDescription: string = this.bdProjectContent[0];
 
   constructor(
     private dialog: MatDialog,
-    private snackbar: MatSnackBar
+    private snackbar: MatSnackBar,
+    private _seoService: SeoService,
+    private router: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.router.data
+      .pipe(
+        take(1)
+      )
+      .subscribe(data => {
+        if (data) {
+          this._seoService.updateTitle(data['title']);
+          this._seoService.updateDescription(data['description']);
+          this._seoService.updateOgTitle(data['title']);
+          this._seoService.updateOgDescription(data['description']);
+          this._seoService.updateOgUrl(data['ogUrl']);
+          this._seoService.updateOgSiteName(data['ogSiteName']);
+          this._seoService.updateOgImage(data['image']);
+          this._seoService.updateTwitterTitle(data['title']);
+          this._seoService.updateTwitterDescription(data['description']);
+          this._seoService.updateTwitterImage(data['image']);
+        }
+
+      })
   }
 
   ngAfterViewInit() {
-    this.app_proj_image = document.getElementById('app_projects_image');
-    this.app_proj_image_mobile = document.getElementById('app_projects_image_mobile');
+    this.bd_proj_image = document.getElementById('bd_projects_image');
+    this.bd_proj_image_mobile = document.getElementById('bd_projects_image_mobile');
   }
 
-  changeAppProjectImage(index: number) {
-    this.app_proj_image.src = this.appProjects[index];
-    this.app_proj_image_mobile.src = this.appProjectsMobile[index];
-    this.projectDescription = this.appProjectContent[index];
+  changeBdProjectImage(index: number) {
+    console.log(index)
+    this.bd_proj_image.src = this.bdProjects[index];
+    this.bd_proj_image_mobile.src = this.bdProjectsMobile[index];
+    this.projectDescription = this.bdProjectContent[index];
   }
 
   openContact(subject: string): void {

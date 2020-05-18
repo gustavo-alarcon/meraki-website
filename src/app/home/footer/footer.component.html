@@ -1,11 +1,12 @@
 <footer class="footer">
-  <div class="footer-menu">
-    <ul>
-      <li routerLink="applications">Aplicaciones</li>
-      <li routerLink="big-data">Big Data</li>
-      <li routerLink="websites">Websites</li>
-      <li routerLink="i2ot">I2OT</li>
-      <li routerLink="about-us">Nosotros</li>
+  <div class="services">
+    <h3 class="services__title">Servicios</h3>
+    <ul class="services__list">
+      <li class="services__item" routerLinkActive="services__item--active" routerLink="applications">Aplicaciones</li>
+      <li class="services__item" routerLinkActive="services__item--active" routerLink="big-data">Big Data</li>
+      <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">Websites</li>
+      <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">I2OT</li>
+      <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">Nosotros</li>
     </ul>
   </div>
 
@@ -35,20 +36,13 @@
 
   </div>
 
-  <!-- <div class="footer-partner">
-    <a href="https://cloud.withgoogle.com/partners/detail/?id=meraki-solutions&hl=es-419" target="_blank"
-      rel="noopener"><img src="../../assets/images/partner.png" alt="google cloud partner"></a>
-    <a href="https://greengeeks.com/track/merakisolutions" target="_blank" rel="noopener"><img
-        src="../../assets/images/green-tag-2.png" alt="green geeks partner"></a>
-  </div> -->
-
   <div class="contact">
     <h3 class="contact__title">Contáctanos</h3>
     <ul class="contact__list">
       <li class="contact__item"><mat-icon class="contact__icon">mail</mat-icon> <a href="mailto:servicios@meraki-s.com">servicios@meraki-s.com</a></li>
-      <li class="contact__item"><mat-icon class="contact__icon">call</mat-icon> 054-329367</li>
-      <li class="contact__item"><mat-icon class="contact__icon">phone_android</mat-icon> 966677277</li>
-      <li class="contact__item"><mat-icon class="contact__icon">phone_android</mat-icon> 966765624</li>
+      <li class="contact__item"><mat-icon class="contact__icon">call</mat-icon> <a href="tel:054329367">054-329367</a></li>
+      <li class="contact__item"><mat-icon class="contact__icon">phone_android</mat-icon> <a href="tel:966677277">966677277</a></li>
+      <li class="contact__item"><mat-icon class="contact__icon">phone_android</mat-icon> <a href="tel:966765624">966765624</a></li>
       <li class="contact__item"><mat-icon class="contact__icon">business</mat-icon> <a href="https://g.page/MerakiSolutions?share" target="_blank"> ¿Cómo llegar?</a></li>
     </ul>
   </div>
@@ -56,5 +50,5 @@
 </footer>
 
 <div class="footer-copy">
-  <p>Todos los derechos reservados. Diseñado y desarrollado por Meraki Solutions</p>
+  <p>Todos los derechos reservados. Diseñado y desarrollado por <strong>Meraki Solutions</strong></p>
 </div>
