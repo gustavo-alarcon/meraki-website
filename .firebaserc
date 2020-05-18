@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "meraki-solutions-web"
+  },
+  "targets": {
+    "meraki-solutions-web": {
+      "hosting": {
+        "meraki-web-v9": [
+          "meraki-solutions-web"
+        ]
+      }
+    }
   }
 }

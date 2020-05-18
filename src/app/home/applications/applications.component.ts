@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import { take, filter, map, mergeMap, tap } from 'rxjs/operators'
 import { Title, Meta } from '@angular/platform-browser';
@@ -15,11 +15,16 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 })
 export class ApplicationsComponent implements OnInit {
 
+  
+
   title = '🥇Aplicaciones móviles en Arequipa para empresas, desarrollo de aplicaciones, diseño de aplicaciones, aplicaciones pwa, aplicaciones web en arequipa, aplicaciones arequipa';
   description = 'Desarrollo, diseño y programación de apps móviles para negocios✅, capta más clientes mostrando productos o servicios en una App móvil con desarrollo a medida';
 
-  app_proj_image: any;
-  app_proj_image_mobile: any;
+  // app_proj_image: any;
+  // app_proj_image_mobile: any;
+
+  @ViewChild('app_projects_image', {static: true}) app_proj_image:ElementRef;
+  @ViewChild('app_projects_image_mobile', {static: true}) app_proj_image_mobile:ElementRef;
 
   appProjects: Array<string> = [
     '../../assets/images/meraki-delivery-app.jpg',
@@ -45,8 +50,6 @@ export class ApplicationsComponent implements OnInit {
   ]
 
   projectDescription: string = this.appProjectContent[0];
-
-  // activatedRoute: ActivatedRoute;
 
   constructor(
     private dialog: MatDialog,
@@ -104,14 +107,14 @@ export class ApplicationsComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.app_proj_image = document.getElementById('app_projects_image');
-    this.app_proj_image_mobile = document.getElementById('app_projects_image_mobile');
+    // this.app_proj_image = document.getElementById('app_projects_image');
+    // this.app_proj_image_mobile = document.getElementById('app_projects_image_mobile');
   }
 
   changeAppProjectImage(index: number) {
     console.log(index);
-    this.app_proj_image.src = this.appProjects[index];
-    this.app_proj_image_mobile.src = this.appProjectsMobile[index];
+    this.app_proj_image['src'] = this.appProjects[index];
+    this.app_proj_image_mobile['src'] = this.appProjectsMobile[index];
     this.projectDescription = this.appProjectContent[index];
   }
 

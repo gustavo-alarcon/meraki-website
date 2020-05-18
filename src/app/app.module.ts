@@ -7,10 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SeoService } from './core/seo.service';
-// FIREBASE MODULES
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule} from '@angular/fire/storage';
+import { WindowRefService } from './core/window-ref.service';
 
 
 @NgModule({
@@ -27,7 +24,8 @@ import { AngularFireStorageModule} from '@angular/fire/storage';
     AngularFireStorageModule,
   ],
   providers: [
-    SeoService
+    SeoService,
+    WindowRefService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 import * as AOS from 'aos';
 import { Router } from '@angular/router';
+import { WindowRefService } from '../core/window-ref.service';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +13,17 @@ export class HomeComponent implements OnInit {
 
   scrollValue: number = 0;
 
-  image: any;
+  // content: string = 'app';
 
-  content: string = 'app';
+  @ViewChild('ms_image_container', {static: true}) image_container: ElementRef;
+  @ViewChild('ms_image', {static: true}) landing_image: ElementRef;
+  @ViewChild('nav_landing', {static: true}) navbar: ElementRef;
+  @ViewChild('nav_logo', {static: true}) nav_logo: ElementRef;
+  @ViewChild('nav_landing_small', {static: true}) navbar_small: ElementRef;
 
   constructor(
     private route: Router,
+    private window: WindowRefService
   ) {
   }
 
@@ -27,46 +33,46 @@ export class HomeComponent implements OnInit {
 
   ngAfterViewInit() {
 
-    let image_container = document.getElementById('ms_image_container');
+    // let image_container = document.getElementById('ms_image_container');
 
-    this.image = document.getElementById('ms_image');
+    // this.image = document.getElementById('ms_image');
 
-    let navbar = document.getElementById('nav_landing');
-    let nav_logo = document.getElementById('nav_logo');
+    // let navbar = document.getElementById('nav_landing');
+    // let nav_logo = document.getElementById('nav_logo');
 
-    let navbar_small = document.getElementById('nav_landing_small');
+    // let navbar_small = document.getElementById('nav_landing_small');
 
 
     // setting landing image
     this.changeTopic(this.route.url.split('/')[2]);
 
-    window.addEventListener('scroll', () => {
-      this.scrollValue = window.scrollY;
-      let winHeight = window.innerHeight;
+    this.window.nativeWindow.addEventListener('scroll', () => {
+      this.scrollValue = this.window.nativeWindow.scrollY;
+      let winHeight = this.window.nativeWindow.innerHeight;
 
-      image_container.style.top = -this.scrollValue * 0.5 + 'px';
+      this.image_container.nativeElement.style.top = -this.scrollValue * 0.5 + 'px';
 
       if (this.scrollValue >= (winHeight * 0.85)) {
-        navbar.style.position = 'fixed';
-        navbar.style.top = '0%'
-        navbar.style.width = '66vw';
-        navbar.style.zIndex = '100';
+        this.navbar.nativeElement['style']['position'] = 'fixed';
+        this.navbar.nativeElement['style']['top'] = '0%'
+        this.navbar.nativeElement['style']['width'] = '66vw';
+        this.navbar.nativeElement['style']['zIndex'] = '100';
 
-        nav_logo.style.position = 'relative'
-        nav_logo.style.display = 'block'
+        this.nav_logo.nativeElement['style']['position'] = 'relative'
+        this.nav_logo.nativeElement['style']['display'] = 'block'
 
-        navbar_small.style.position = 'fixed';
-        navbar_small.style.top = '0%';
-        navbar_small.style.width = '82vw';
-        navbar_small.style.zIndex = '100';
+        this.navbar_small.nativeElement['style']['position'] = 'fixed';
+        this.navbar_small.nativeElement['style']['top'] = '0%';
+        this.navbar_small.nativeElement['style']['width'] = '82vw';
+        this.navbar_small.nativeElement['style']['zIndex'] = '100';
 
       } else {
-        navbar.style.position = 'relative';
+        this.navbar.nativeElement['style']['position'] = 'relative';
 
-        nav_logo.style.position = 'absolute'
-        nav_logo.style.display = 'none'
+        this.nav_logo.nativeElement['style']['position'] = 'absolute'
+        this.nav_logo.nativeElement['style']['display'] = 'none'
 
-        navbar_small.style.position = 'relative';
+        this.navbar_small.nativeElement['style']['position'] = 'relative';
 
       }
     })
@@ -75,23 +81,23 @@ export class HomeComponent implements OnInit {
   changeTopic(topic: string): void {
 
     if (topic == 'applications') {
-      this.image.style.backgroundImage = 'url(../../assets/images/app-white.jpg)';
+      this.landing_image.nativeElement.style.backgroundImage = 'url(../../assets/images/app-white.jpg)';
     }
 
     if (topic == 'big-data') {
-      this.image.style.backgroundImage = 'url(../../assets/images/bd-white.jpg)';
+      this.landing_image.nativeElement.style.backgroundImage = 'url(../../assets/images/bd-white.jpg)';
     }
 
     if (topic == 'websites') {
-      this.image.style.backgroundImage = 'url(../../assets/images/web-white.jpg)';
+      this.landing_image.nativeElement['style']['backgroundImage'] = 'url(../../assets/images/web-white.jpg)';
     }
 
     if (topic == 'i2ot') {
-      this.image.style.backgroundImage = 'url(../../assets/images/i2ot-white.jpg)';
+      this.landing_image.nativeElement['style']['backgroundImage'] = 'url(../../assets/images/i2ot-white.jpg)';
     }
 
     if (topic == 'about-us') {
-      this.image.style.backgroundImage = 'url(../../assets/images/i2ot-white.jpg)';
+      this.landing_image.nativeElement['style']['backgroundImage'] = 'url(../../assets/images/i2ot-white.jpg)';
     }
 
   }
