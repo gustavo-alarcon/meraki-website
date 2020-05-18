@@ -8,6 +8,7 @@
 }
 
 /* SERVICES */
+
 .services {
   padding: 1em 1em;
 }
@@ -26,7 +27,7 @@
   color: var(--color-text);
 }
 
-.services__item{
+.services__item {
   list-style: none;
   width: fit-content;
   transition: ease-in 0.3s;
@@ -43,65 +44,48 @@
 }
 
 /* CONTACT */
+
 .footer .footer-contact {
   display: flex;
   align-items: flex-start;
   padding: 1em 3em;
   background: white;
   width: 50%;
-  -webkit-filter: drop-shadow(5px 5px 5px #222 );
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
   border-radius: 10px;
 }
 
-.footer .footer-contact .contact-title {
+.footer-contact__title {
   width: 43%;
   margin: 0 2em 0 1em;
 }
 
-.footer .footer-contact .contact-title h2 {
+.footer-contact__title h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 900;
   font-size: 2em;
   color: var(--color-text);
 }
 
-.footer .footer-contact form {
+.footer-contact__form {
   width: 100%;
 }
 
-.footer .footer-contact form mat-form-field{
+.footer-contact__form mat-form-field {
   width: 100%;
 }
 
-.footer .footer-contact .contact-actions {
+.footer-contact__actions {
   display: flex;
 }
 
-.footer .footer-contact .contact-actions span {
+.footer-contact__actions span {
   flex: auto 1 1;
 }
 
-/* PARTNER */
-
-.footer .footer-partner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer .footer-partner a:nth-of-type(1) img {
-  padding: 1em;
-  width: 200px;
-}
-
-.footer .footer-partner a:nth-of-type(2) img {
-  padding: 1em;
-  width: 150px;
-}
-
 /* CONTACT */
+
 .contact {
   padding: 1em 1em;
 }
@@ -127,13 +111,14 @@
 }
 
 /* COPY RIGHT */
-.footer-copy{
+
+.footer-copy {
   display: flex;
   justify-content: center;
   padding: 1em;
 }
 
-.footer-copy p{
+.footer-copy p {
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: 100;
@@ -147,28 +132,12 @@
   .footer {
     flex-direction: column;
   }
-
-  .footer .footer-menu {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
   .footer .footer-contact {
     width: 100%;
     flex-direction: column;
     margin-top: 2em;
   }
-
-  .footer .footer-contact .contact-title {
+  .footer .footer-contact__title {
     width: 100%;
   }
-
-  .footer .footer-partner {
-    width: 100%;
-    padding-top: 2em;
-    display: flex;
-    justify-content: center;
-  }
-
 }

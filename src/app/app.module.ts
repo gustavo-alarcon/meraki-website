@@ -8,7 +8,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SeoService } from './core/seo.service';
 import { WindowRefService } from './core/window-ref.service';
-
+// FIREBASE MODULES
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database'
 
 @NgModule({
   declarations: [
@@ -21,7 +24,7 @@ import { WindowRefService } from './core/window-ref.service';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig, 'merakisolutionsweb'),
     AngularFirestoreModule.enablePersistence(),
-    AngularFireStorageModule,
+    AngularFireDatabaseModule
   ],
   providers: [
     SeoService,

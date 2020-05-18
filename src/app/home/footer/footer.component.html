@@ -11,11 +11,11 @@
   </div>
 
   <div class="footer-contact">
-    <div class="contact-title">
+    <div class="footer-contact__title">
       <h2>Hagamos realidad esa idea!</h2>
       <p>Envíanos un mensaje</p>
     </div>
-    <form [formGroup]="contactFormGroup">
+    <form [formGroup]="contactFormGroup" class="footer-contact__form">
       <mat-form-field>
         <mat-label>Correo</mat-label>
         <input matInput color="primary" type="text" formControlName="mail" placeholder="nombre@empresa.com"
@@ -27,9 +27,12 @@
         <textarea matInput formControlName="messege" cols="10" rows="5"></textarea>
       </mat-form-field><br>
 
-      <div class="contact-actions">
+      <div class="footer-contact__actions">
         <span></span>
-        <button mat-raised-button color="secondary" (click)="submit()" aria-label="submit button">Enviar</button>
+        <button mat-raised-button color="secondary" (click)="submit()" [disabled]="(sending$ | async) == 2" aria-label="submit button">
+          <span *ngIf="(sending$ | async) == 1">Enviar</span>
+          <span *ngIf="(sending$ | async) == 2">Enviando...</span>
+        </button>
       </div>
 
     </form>
@@ -52,3 +55,4 @@
 <div class="footer-copy">
   <p>Todos los derechos reservados. Diseñado y desarrollado por <strong>Meraki Solutions</strong></p>
 </div>
+
