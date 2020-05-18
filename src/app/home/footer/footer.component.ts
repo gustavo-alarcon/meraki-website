@@ -40,7 +40,7 @@ export class FooterComponent implements OnInit {
     const ref = this.af.firestore.collection('mail').doc();
 
     let message = {
-      to: ['mocharan@meraki-s.com'],
+      to: ['galarcon@meraki-s.com','mpalomino@meraki-s.com'],
       from: this.contactFormGroup.get('mail').value,
       template: {
         name: 'email',
