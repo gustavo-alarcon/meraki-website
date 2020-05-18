@@ -5,30 +5,30 @@
   </div>
   <div class="w3-col s10 m10 l8" style="height:100vh">
     <div class="landing">
-      <div class="landing__partner" data-aos="fade-left">
+      <div class="container-partner" data-aos="fade-left">
         <a href="https://cloud.withgoogle.com/partners/detail/?id=meraki-solutions&hl=es-419" target="_blank" rel="noopener"><img
             src="../../assets/images/partner.png" alt="google cloud partner"></a>
         <a href="https://greengeeks.com/track/merakisolutions" target="_blank" rel="noopener"><img
             src="../../assets/images/green-tag-2.png" alt="green geeks partner"></a>
       </div>
-      <div class="landing__bg"></div>
-      <div class="landing__title" data-aos="fade-up" data-aos-duration="1000">
+      <div class="bg"></div>
+      <div class="container-title" data-aos="fade-up" data-aos-duration="1000">
         <p>Un aliado en soluciones tecnológicas</p>
         <img src="../../assets/images/letters.svg" alt="meraki solutions logo">
         <p>La tecnología es una ciencia, pero conseguir que las personas la usen es un arte </p>
         <p style="color: #f8bb16; margin-top: 2em;"><small>Mike Arauz</small></p>
       </div>
-      <div #ms_image_container class="landing__image-container" data-aos="fade-right" data-aos-duration="1000">
-        <div #ms_image class="landing__image"></div>
+      <div #ms_image_container class="ms-image-container" data-aos="fade-right" data-aos-duration="1000">
+        <div #ms_image class="ms-image"></div>
       </div>
 
-      <div #nav_landing class="landing__nav w3-hide-small">
+      <div #nav_landing class="container-nav-landing w3-hide-small">
         <nav>
-          <li #nav_logo class="landing__navlogo" data-aos="fade-in"><a href="#ms_background"><img src="../../assets/images/meraki-logo.svg"
+          <li #nav_logo data-aos="fade-in"><a href="#ms_background"><img src="../../assets/images/meraki-logo.svg"
                 alt="meraki solutions logo" style="height: 40px;"></a></li>
 
-          <li (click)="changeTopic('applications')" routerLinkActive="landing__link--active"  routerLink="applications">Aplicaciones</li>
-          <li (click)="changeTopic('big-data')" routerLinkActive="landing__link--active" routerLink="big-data">Big Data</li>
+          <li (click)="changeTopic('applications')" routerLinkActive="link--active"  routerLink="applications">Aplicaciones</li>
+          <li (click)="changeTopic('big-data')" routerLinkActive="link--active" routerLink="big-data">Big Data</li>
           <li matTooltip="En actualización" aria-label="link en actualización"> Websites</li>
           <li matTooltip="En actualización" aria-label="link en actualización"> I2OT</li>
           <li matTooltip="En actualización" aria-label="link en actualización"> Nosotros</li>
@@ -38,7 +38,7 @@
         </nav>
       </div>
 
-      <div #nav_landing_small class="landing__nav w3-hide-medium w3-hide-large" data-aos="fade-down">
+      <div #nav_landing_small class="container-nav-landing w3-hide-medium w3-hide-large" data-aos="fade-down">
         <nav>
           <a href="#ms_background"><img src="../../assets/images/meraki-logo.svg" alt="meraki solutions logo"
               style="height: 50px;"></a>

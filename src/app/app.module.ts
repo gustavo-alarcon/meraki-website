@@ -11,7 +11,6 @@ import { WindowRefService } from './core/window-ref.service';
 // FIREBASE MODULES
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/database'
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(environment.firebaseConfig, 'merakisolutionsweb'),
-    AngularFirestoreModule.enablePersistence(),
-    AngularFireDatabaseModule
+    AngularFirestoreModule.enablePersistence()
   ],
   providers: [
     SeoService,
