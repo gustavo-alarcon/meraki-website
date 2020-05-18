@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -11,9 +12,13 @@ export class FooterComponent implements OnInit {
 
   contactFormGroup: FormGroup;
 
+  sending = new BehaviorSubject(1);
+  sending$ = this.sending.asObservable();
+
   constructor(
     private fb: FormBuilder,
-    private af: AngularFirestore
+    private af: AngularFirestore,
+    //private snackbar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -26,24 +31,62 @@ export class FooterComponent implements OnInit {
       messege: ['', Validators.required]
     });
   }
+  
 
   submit(): void {
-
+    
+    this.sending.next(2)
     const batch = this.af.firestore.batch();
-    const ref = this.af.firestore.collection('/db/crcLaJoya/outOfServiceRacks').doc();
-    batch.set(ref, {
-      to: ['mocharan@gmail.com'],
-      message: {
-        subject: 'Hello from Firebase!',
-        text: 'This is the plaintext section of the email body.',
-        html: 'This is the <code>HTML</code> section of the email body.',
+    const ref = this.af.firestore.collection('mail').doc();
+
+    let message = {
+      to: ['galarcon@meraki-s.com','mpalomino@meraki-s.com'],
+      from: this.contactFormGroup.get('mail').value,
+      template: {
+        name: 'email',
+        data: {
+          message: this.contactFormGroup.get('messege').value.split(/\r?\n/g).filter(option => !!option)
+        }
       }
-    })
+    }
+
+    batch.set(ref, message)
+
     batch.commit().then(() => {
-      console.log('enviado');
+      this.sendMessage()
+
+    }).catch(err => {
+      console.log(err);
 
     })
     // 
+  }
+
+  sendMessage() {
+    const batch = this.af.firestore.batch();
+    const ref = this.af.firestore.collection('mail').doc();
+
+    let mess2 = {
+      to: [this.contactFormGroup.get('mail').value],
+      template: {
+        name: 'thanks'
+      }
+    }
+
+    batch.set(ref, mess2)
+    batch.commit().then(() => {
+      this.sending.next(1)
+      this.contactFormGroup.reset()
+
+      Object.keys(this.contactFormGroup.controls).forEach(key => {
+        this.contactFormGroup.controls[key].setErrors(null)
+      });
+
+
+    }).catch(err => {
+      console.log(err);
+
+    })
   }
 
 }
