@@ -12,25 +12,25 @@
   
     <div class="footer-contact">
       <div class="footer-contact__title">
-        <h2>Hagamos realidad esa idea!</h2>
+        <h2 class="footer-contact__subtitle">Hagamos realidad esa idea!</h2>
         <p>Envíanos un mensaje</p>
       </div>
       <form [formGroup]="contactFormGroup" class="footer-contact__form">
-        <mat-form-field>
+        <mat-form-field class="footer-contact__input">
           <mat-label>Correo</mat-label>
           <input matInput color="primary" type="text" formControlName="mail" placeholder="nombre@empresa.com"
             autocomplete="off">
         </mat-form-field><br>
   
-        <mat-form-field>
+        <mat-form-field class="footer-contact__input">
           <mat-label>Mensaje</mat-label>
           <textarea matInput formControlName="messege" cols="10" rows="5"></textarea>
         </mat-form-field><br>
   
         <div class="footer-contact__actions">
-          <span></span>
+          <span class="footer-contact__space"></span>
           <button mat-raised-button color="secondary" (click)="submit()" [disabled]="(sending$ | async) == 2" aria-label="submit button">
-            <span *ngIf="(sending$ | async) == 1">Enviar</span>
+            <span *ngIf="(sending$ | async) == 1" >Enviar</span>
             <span *ngIf="(sending$ | async) == 2">Enviando...</span>
           </button>
         </div>
