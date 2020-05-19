@@ -61,7 +61,7 @@
     margin: 0 2em 0 1em;
   }
   
-  .footer-contact__title h2 {
+  .footer-contact__subtitle {
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
     font-size: 2em;
@@ -72,7 +72,7 @@
     width: 100%;
   }
   
-  .footer-contact__form mat-form-field {
+  .footer-contact__input {
     width: 100%;
   }
   
@@ -80,7 +80,7 @@
     display: flex;
   }
   
-  .footer-contact__actions span {
+  .footer-contact__space {
     flex: auto 1 1;
   }
   

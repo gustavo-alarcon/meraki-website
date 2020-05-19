@@ -15,7 +15,7 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 })
 export class ApplicationsComponent implements OnInit {
 
-  
+
 
   title = '🥇Aplicaciones móviles en Arequipa para empresas, desarrollo de aplicaciones, diseño de aplicaciones, aplicaciones pwa, aplicaciones web en arequipa, aplicaciones arequipa';
   description = 'Desarrollo, diseño y programación de apps móviles para negocios✅, capta más clientes mostrando productos o servicios en una App móvil con desarrollo a medida';
@@ -23,8 +23,8 @@ export class ApplicationsComponent implements OnInit {
   // app_proj_image: any;
   // app_proj_image_mobile: any;
 
-  @ViewChild('app_projects_image', {static: true}) app_proj_image:ElementRef;
-  @ViewChild('app_projects_image_mobile', {static: true}) app_proj_image_mobile:ElementRef;
+  @ViewChild('app_projects_image', { static: true }) app_proj_image: ElementRef;
+  @ViewChild('app_projects_image_mobile', { static: true }) app_proj_image_mobile: ElementRef;
 
   appProjects: Array<string> = [
     '../../assets/images/meraki-delivery-app.jpg',
@@ -50,6 +50,7 @@ export class ApplicationsComponent implements OnInit {
   ]
 
   projectDescription: string = this.appProjectContent[0];
+  index: number = 0
 
   constructor(
     private dialog: MatDialog,
@@ -113,8 +114,7 @@ export class ApplicationsComponent implements OnInit {
 
   changeAppProjectImage(index: number) {
     console.log(index);
-    this.app_proj_image['src'] = this.appProjects[index];
-    this.app_proj_image_mobile['src'] = this.appProjectsMobile[index];
+    this.index = index
     this.projectDescription = this.appProjectContent[index];
   }
 
