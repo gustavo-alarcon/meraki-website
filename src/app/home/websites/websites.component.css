@@ -1,0 +1,40 @@
+.websites {
+  position: relative;
+  min-height: 100vh;
+}
+
+.websites__bgText {
+  position: absolute;
+  top: -3%;
+  left: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15vw;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.segment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.segment--first {
+  padding-top: 10%;
+}
+
+.segment__description {
+  position: relative;
+  padding: 0 2em;
+  width: 50%;
+  align-self: center;
+  width: 50%;
+  align-self: center;
+}
+
+.segment__title {
+  font-size: 3.5em;
+  color: #fff;
+}
