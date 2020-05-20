@@ -6,20 +6,20 @@
 
 /* PARTNER */
 
-.container-partner {
+.landing__partner {
   /* border: solid 1px red; */
   position: relative;
   margin-top: 5%;
 }
 
-.container-partner img {
+.landing__partner-img {
   height: 10vh;
   padding-right: 1em;
 }
 
 /* BACKGROUND */
 
-.bg {
+.landing__background {
   position: absolute;
   height: 55vh;
   width: 100%;
@@ -31,13 +31,13 @@
 
 /* TITLE */
 
-.container-title {
+.landing__title {
   position: relative;
   /* border: solid 1px green; */
   height: 70vh;
 }
 
-.container-title p:nth-of-type(1){
+.landing__paragraph1{
   display: none;
   position: absolute;
   width: 100%;
@@ -54,7 +54,7 @@
   
 }
 
-.container-title img{
+.landing__bigimg{
   position: absolute;
   top: 30%;
   -webkit-filter: drop-shadow(5px 5px 5px #222 );
@@ -63,7 +63,7 @@
   min-width: 270px;
 }
 
-.container-title p:nth-of-type(2) {
+.landing__paragraph2 {
   position: absolute;
   top: 60%;
   width: 60%;
@@ -75,7 +75,7 @@
   filter: drop-shadow(5px 5px 5px #222);
 }
 
-.container-title p:nth-of-type(3) {
+.landing__paragraph3 {
   position: absolute;
   top: 80%;
   width: 45%;
@@ -85,7 +85,7 @@
   color: #5f6368;
 }
 
-.ms-image-container {
+.landing__image-container {
   position: absolute;
   top: 0%;
   left: 50%;
@@ -94,7 +94,7 @@
   filter: drop-shadow(5px 5px 5px #222);
 }
 
-.ms-image {
+.landing__image {
   background-image: url('../../assets/images/app-white.jpg');
   height: 100vh;
   width: 40vw;
@@ -108,13 +108,13 @@
 
 /* NAVBAR */
 
-.container-nav-landing {
+.landing__navbar {
   position: absolute;
   width: 66vw;
   /* transition: 1s; */
 }
 
-.container-nav-landing nav{
+.landing__nav{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -126,7 +126,7 @@
   /* transition: ease-in-out 1s; */
 }
 
-.container-nav-landing nav li{
+.landing__link{
   list-style: none;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
@@ -145,7 +145,7 @@
   cursor: pointer;
 } */
 
-.link--active {
+.landing__link--active {
   width: fit-content;
   font-weight: 900;
   background-color: white;
@@ -154,7 +154,7 @@
   color: #111111 !important;
 }
 
-#nav_logo {
+.landing__logo {
   position: absolute;
   left: 0;
   display: none;
@@ -162,36 +162,18 @@
 }
 
 @media(max-width:600px) {
-  .container-title p:nth-of-type(2){
+  .landing__paragraph2{
     top: 50%;
     font-size: 1.5em;
     width: 100%;
   }
 
-  .container-title img{
+  .landing__bigimg{
     top: 30%;
     width: 100%
   }
 
-  .container-nav-landing {
+  .landing__navbar {
     width: 82vw;
   }
-}
-
-/* BIG DATA SECTION */
-
-#bd_content {
-  position: relative;
-  min-height: 100vh;
-}
-
-#bd_content .bd-bg {
-    position: absolute;
-    top: 0%;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 20vh;
-    font-weight: 900;
-    color: rgba(0, 0, 0, 0.2);
-    z-index: -1;
-    /* border: solid 1px blue; */
 }

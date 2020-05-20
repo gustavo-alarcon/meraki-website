@@ -1,29 +1,29 @@
-<h2 mat-dialog-title>{{subject}}</h2>
+<h2 class="contact__title" mat-dialog-title>{{subject}}</h2>
 <mat-dialog-content class="w3-margin-bottom">
-  <p>Nos pondremos en contacto contigo para conversar sobre tu proyecto y los desafios que enfrentas. 
+  <p class="contact__paragraph">Nos pondremos en contacto contigo para conversar sobre tu proyecto y los desafios que enfrentas. 
     Además, te brindaremos de forma gratuita toda la orientación que necesites, para saber si es exactamente este servicio el que estás buscando.</p>
   <form [formGroup]="contactFormGroup">
-    <mat-form-field class="contact-input">
+    <mat-form-field class="contact__input">
       <mat-label>Nombre y Apellido</mat-label>
       <input matInput type="text" formControlName="name" placeholder="John Doe" aria-label="campo de nombre y apellido" autocomplete="off">
       <mat-hint>*campo requerido</mat-hint>
     </mat-form-field><br>
-    <mat-form-field class="contact-input">
+    <mat-form-field class="contact__input">
       <mat-label>Correo</mat-label>
       <input matInput type="mail" formControlName="mail" placeholder="nombre@empresa.com" aria-label="campo de correo" autocomplete="off">
       <mat-hint>*campo requerido</mat-hint>
     </mat-form-field><br>
-    <mat-form-field class="contact-input">
+    <mat-form-field class="contact__input">
       <mat-label>Teléfono</mat-label>
       <input matInput type="text" formControlName="phone" placeholder="966565878" aria-label="campo de teléfono" autocomplete="off">
       <mat-hint>*campo requerido</mat-hint>
     </mat-form-field><br>
-    <mat-form-field class="contact-input">
+    <mat-form-field class="contact__input">
       <mat-label>Empresa</mat-label>
       <input matInput type="text" formControlName="company" placeholder="SpaceX" aria-label="campo de empresa" autocomplete="off">
       <mat-hint>*campo requerido</mat-hint>
     </mat-form-field><br>
-    <mat-form-field class="contact-input">
+    <mat-form-field class="contact__input">
       <mat-label>Mensaje</mat-label>
       <textarea matInput cols="5" rows="5" formControlName="messege" placeholder="Cuéntanos un poco sobre tu proyecto" aria-label="campo de empresa" autocomplete="off"></textarea>
       <mat-hint>*campo requerido</mat-hint>

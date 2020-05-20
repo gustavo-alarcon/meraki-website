@@ -1,4 +1,4 @@
-h2 {
+.contact__title {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 2em;
@@ -7,7 +7,7 @@ h2 {
   max-width: 350px;
 }
 
-p {
+.contact__paragraph {
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
   font-size: 1em;
@@ -17,7 +17,7 @@ p {
   margin: 0;
 }
 
-.contact-input  {
+.contact-input {
   max-width: 350px;
   width: 100%;
   padding: .5em 0em;

@@ -50,6 +50,7 @@ export class ApplicationsComponent implements OnInit {
   ]
 
   projectDescription: string = this.appProjectContent[0];
+  index: number = 0
 
   constructor(
     private dialog: MatDialog,
@@ -106,8 +107,7 @@ export class ApplicationsComponent implements OnInit {
 
   changeAppProjectImage(index: number) {
     console.log(index);
-    this.app_proj_image['src'] = this.appProjects[index];
-    this.app_proj_image_mobile['src'] = this.appProjectsMobile[index];
+    this.index = index
     this.projectDescription = this.appProjectContent[index];
   }
 

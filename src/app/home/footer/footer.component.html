@@ -1,54 +1,58 @@
 <footer class="footer">
-  <div class="services">
-    <h3 class="services__title">Servicios</h3>
-    <ul class="services__list">
-      <li class="services__item" routerLinkActive="services__item--active" routerLink="applications">Aplicaciones</li>
-      <li class="services__item" routerLinkActive="services__item--active" routerLink="big-data">Big Data</li>
-      <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">Websites</li>
-      <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">I2OT</li>
-      <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">Nosotros</li>
-    </ul>
-  </div>
-
-  <div class="footer-contact">
-    <div class="contact-title">
-      <h2>Hagamos realidad esa idea!</h2>
-      <p>Envíanos un mensaje</p>
+    <div class="services">
+      <h3 class="services__title">Servicios</h3>
+      <ul class="services__list">
+        <li class="services__item" routerLinkActive="services__item--active" routerLink="applications">Aplicaciones</li>
+        <li class="services__item" routerLinkActive="services__item--active" routerLink="big-data">Big Data</li>
+        <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">Websites</li>
+        <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">I2OT</li>
+        <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">Nosotros</li>
+      </ul>
     </div>
-    <form [formGroup]="contactFormGroup">
-      <mat-form-field>
-        <mat-label>Correo</mat-label>
-        <input matInput color="primary" type="text" formControlName="mail" placeholder="nombre@empresa.com"
-          autocomplete="off">
-      </mat-form-field><br>
-
-      <mat-form-field>
-        <mat-label>Mensaje</mat-label>
-        <textarea matInput formControlName="messege" cols="10" rows="5"></textarea>
-      </mat-form-field><br>
-
-      <div class="contact-actions">
-        <span></span>
-        <button mat-raised-button color="secondary" (click)="submit()" aria-label="submit button">Enviar</button>
+  
+    <div class="footer-contact">
+      <div class="footer-contact__title">
+        <h2 class="footer-contact__subtitle">Hagamos realidad esa idea!</h2>
+        <p>Envíanos un mensaje</p>
       </div>
-
-    </form>
-
+      <form [formGroup]="contactFormGroup" class="footer-contact__form">
+        <mat-form-field class="footer-contact__input">
+          <mat-label>Correo</mat-label>
+          <input matInput color="primary" type="text" formControlName="mail" placeholder="nombre@empresa.com"
+            autocomplete="off">
+        </mat-form-field><br>
+  
+        <mat-form-field class="footer-contact__input">
+          <mat-label>Mensaje</mat-label>
+          <textarea matInput formControlName="messege" cols="10" rows="5"></textarea>
+        </mat-form-field><br>
+  
+        <div class="footer-contact__actions">
+          <span class="footer-contact__space"></span>
+          <button mat-raised-button color="secondary" (click)="submit()" [disabled]="(sending$ | async) == 2" aria-label="submit button">
+            <span *ngIf="(sending$ | async) == 1" >Enviar</span>
+            <span *ngIf="(sending$ | async) == 2">Enviando...</span>
+          </button>
+        </div>
+  
+      </form>
+  
+    </div>
+  
+    <div class="contact">
+      <h3 class="contact__title">Contáctanos</h3>
+      <ul class="contact__list">
+        <li class="contact__item"><mat-icon class="contact__icon">mail</mat-icon> <a href="mailto:servicios@meraki-s.com">servicios@meraki-s.com</a></li>
+        <li class="contact__item"><mat-icon class="contact__icon">call</mat-icon> <a href="tel:054329367">054-329367</a></li>
+        <li class="contact__item"><mat-icon class="contact__icon">phone_android</mat-icon> <a href="tel:966677277">966677277</a></li>
+        <li class="contact__item"><mat-icon class="contact__icon">phone_android</mat-icon> <a href="tel:966765624">966765624</a></li>
+        <li class="contact__item"><mat-icon class="contact__icon">business</mat-icon> <a href="https://g.page/MerakiSolutions?share" target="_blank"> ¿Cómo llegar?</a></li>
+      </ul>
+    </div>
+  
+  </footer>
+  
+  <div class="footer-copy">
+    <p>Todos los derechos reservados. Diseñado y desarrollado por <strong>Meraki Solutions</strong></p>
   </div>
-
-  <div class="contact">
-    <h3 class="contact__title">Contáctanos</h3>
-    <ul class="contact__list">
-      <li class="contact__item"><mat-icon class="contact__icon">mail</mat-icon> <a href="mailto:servicios@meraki-s.com">servicios@meraki-s.com</a></li>
-      <li class="contact__item"><mat-icon class="contact__icon">call</mat-icon> <a href="tel:054329367">054-329367</a></li>
-      <li class="contact__item"><mat-icon class="contact__icon">phone_android</mat-icon> <a href="tel:966677277">966677277</a></li>
-      <li class="contact__item"><mat-icon class="contact__icon">phone_android</mat-icon> <a href="tel:966765624">966765624</a></li>
-      <li class="contact__item"><mat-icon class="contact__icon">business</mat-icon> <a href="https://g.page/MerakiSolutions?share" target="_blank"> ¿Cómo llegar?</a></li>
-    </ul>
-  </div>
-
-</footer>
-
-<div class="footer-copy">
-  <p>Todos los derechos reservados. Diseñado y desarrollado por <strong>Meraki Solutions</strong></p>
-</div>
+  

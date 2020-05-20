@@ -1,35 +1,41 @@
-<div id="app_content">
-  <h2 class="app-bg" data-aos="fade-up">Apps</h2>
-  <section class="app-segment-1">
-    <div class="segment-text" data-aos="fade-right" data-aos-duration="1000">
-      <h3>Transformación digital</h3>
-      <p>Es una nueva era en donde las <strong>aplicaciones</strong> nos ayudan a conseguir objetivos de formas que jamás habiamos
+<div class="app">
+  <h2 class="app__title" data-aos="fade-up">Apps</h2>
+  <section class="segment segment__paddingtop">
+    <div class="segment__text" data-aos="fade-right" data-aos-duration="1000">
+      <h3 class="segment__title">Transformación digital</h3>
+      <p>Es una nueva era en donde las <strong>aplicaciones</strong> nos ayudan a conseguir objetivos de formas que
+        jamás habiamos
         visto.</p>
-      <p><strong>Meraki Solutions</strong> lo ayudará a conseguir el rendimiento y nivel de digitalización que su empresa o proyecto
+      <p><strong>Meraki Solutions</strong> lo ayudará a conseguir el rendimiento y nivel de digitalización que su
+        empresa o proyecto
         necesita.</p>
 
-      <img src="../../assets/images/google-cloud.png" alt="google cloud services">
+      <img class="segment__picture  segment__half" src="../../assets/images/google-cloud.png"
+        alt="google cloud services">
 
       <p style="margin: 3em 0;">
         Trabajamos de la mano con uno de los más grandes referentes en tecnología como lo es Google y el ecosistema
         de servicios en la nube de Google Cloud.</p>
     </div>
 
-    <div class="w3-hide-small segment-image" data-aos="fade-left" data-aos-duration="1000">
-      <img src="../../assets/images/aplicaciones-google-pixel.png" alt="app image">
+    <div class="w3-hide-small segment__image segment__image--right " data-aos="fade-left" data-aos-duration="1000">
+      <img class="segment__total" src="../../assets/images/aplicaciones-google-pixel.png" alt="app image">
     </div>
   </section>
 
-  <section class="app-segment-2">
-    <div class="segment-text" data-aos="fade-left" data-aos-duration="1000">
-      <h3>Nuestro ciclo de desarrollo</h3>
-      <p>Existe un paradigma generado a través de la gestión anticuada de proyectos de <Strong>software</Strong>, el cual pone a las
+  <section class="segment segment__margintop">
+    <div class="segment__text segment__text--order" data-aos="fade-left" data-aos-duration="1000">
+      <h3 class="segment__title">Nuestro ciclo de desarrollo</h3>
+      <p>Existe un paradigma generado a través de la gestión anticuada de proyectos de <Strong>software</Strong>, el
+        cual pone a las
         empresas bajo la incertidumbre
         de como se esta llevando a cabo su proyecto y cual será el resultado al final de varios meses de trabajo en las
         sombras por parte de su proveedor de sotfware.
       </p>
-      <p><strong>Meraki Solutions</strong> utiliza SCRUM como metodología ágil para el desarrollo de <strong>aplicaciones</strong>, permitiéndonos hacer
-        entregables de forma semanal y revisar los resultados junto con nuestros clientes, para evaluar posibles cambios o pivotes de mejora
+      <p><strong>Meraki Solutions</strong> utiliza SCRUM como metodología ágil para el desarrollo de
+        <strong>aplicaciones</strong>, permitiéndonos hacer
+        entregables de forma semanal y revisar los resultados junto con nuestros clientes, para evaluar posibles cambios
+        o pivotes de mejora
         dentro del desarrollo.
       </p>
 
@@ -37,82 +43,91 @@
         semana de desarrollo.</p>
     </div>
 
-    <div class="w3-hide-small segment-image" data-aos="fade-right" data-aos-duration="1000">
-      <img src="../../assets/images/aplicaciones-metodologia.jpg" alt="app image" style="width: 100%;">
+    <div class="w3-hide-small segment__image segment__image--left" data-aos="fade-right" data-aos-duration="1000">
+      <img class="segment__total  segment__picture--filter" src="../../assets/images/aplicaciones-metodologia.jpg"
+        alt="app image" style="width: 100%;">
     </div>
   </section>
 
-  <iframe title="What is SCRUM" data-aos="fade-right" data-aos-duration="1000"
+  <iframe title="What is SCRUM" data-aos="fade-right" class="app__frame" data-aos-duration="1000"
     src="https://www.youtube.com/embed/a33xOe9d_Dk" frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-  <section class="bd-segment-5">
-    <h2 class="app-bg" data-aos="fade-up">Solutions</h2>
-    <div class="container" data-aos="fade-right" data-aos-duration="1000">
-      <div class="box">
-        <div class="content">
-          <h2>01</h2>
-          <h3>Migración de sistemas</h3>
-          <p>Servicio de análisis, planificación y migración de sistemas a Google Cloud. El servicio se puede extender a 
+  <section class="bd-segment">
+    <h2 class="app__title" data-aos="fade-up">Solutions</h2>
+    <div class="bd-segment__container" data-aos="fade-right" data-aos-duration="1000">
+      <div class="bd-segment__box">
+        <div class="bd-segment__content">
+          <h2 class="bd-segment__subtitle">01</h2>
+          <h3 class="bd-segment__title">Migración de sistemas</h3>
+          <p class="bd-segment__paragraph">Servicio de análisis, planificación y migración de sistemas a Google Cloud.
+            El servicio se puede extender a
             una actualización de funcionamiento en la nube</p>
-          <a matRipple class="mat-elevation-z4" (click)="openContact('Migración de sistemas')"
+          <a matRipple class="bd-segment__link mat-elevation-z4" (click)="openContact('Migración de sistemas')"
             aria-label="asesor migracion de sistemas">Contactar asesor</a>
         </div>
       </div>
-      <div class="box">
-        <div class="content">
-          <h2>02</h2>
-          <h3>Desarrollo de Apps</h3>
-          <p>Servicio de ingeniería, planificación, diseño y desarrollo de aplicaciones web o móviles, comenzando con un MVP 
+      <div class="bd-segment__box">
+        <div class="bd-segment__content">
+          <h2 class="bd-segment__subtitle">02</h2>
+          <h3 class="bd-segment__title">Desarrollo de Apps</h3>
+          <p class="bd-segment__paragraph">Servicio de ingeniería, planificación, diseño y desarrollo de aplicaciones
+            web o móviles, comenzando con un MVP
             web, para validar el concepto.</p>
-          <a matRipple class="mat-elevation-z4" (click)="openContact('Desarrollo de Apps')"
+          <a matRipple class="bd-segment__link mat-elevation-z4" (click)="openContact('Desarrollo de Apps')"
             aria-label="asesor desarrollo de apps">Contactar asesor</a>
         </div>
       </div>
-      <div class="box">
-        <div class="content">
-          <h2>03</h2>
-          <h3>Realidad Aumentada</h3>
-          <p>Servicio de ingeniería, planificación, diseño y desarrollo de aplicaciones de realidad aumentada, pudiendo extender
+      <div class="bd-segment__box">
+        <div class="bd-segment__content">
+          <h2 class="bd-segment__subtitle">03</h2>
+          <h3 class="bd-segment__title">Realidad Aumentada</h3>
+          <p class="bd-segment__paragraph">Servicio de ingeniería, planificación, diseño y desarrollo de aplicaciones de
+            realidad aumentada, pudiendo extender
             sistemas basados en unity y firebase para mostrar información en AR</p>
-          <a matRipple class="mat-elevation-z4" (click)="openContact('Realidad Aumentada')"
+          <a matRipple class="bd-segment__link mat-elevation-z4" (click)="openContact('Realidad Aumentada')"
             aria-label="asessor realidad aumentada">Contactar asesor</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="app-segment-3">
-    <h2 class="app-bg" data-aos="fade-up">Works</h2>
-    <div class="segment-text" data-aos="fade-right" data-aos-duration="1000">
-      <h3>En proceso</h3>
-      <ul>
-        <li (mouseenter)="changeAppProjectImage(0)"><span>001</span> Meraki Delivery App</li>
-        <li (mouseenter)="changeAppProjectImage(1)"><span>002</span> Almacenes La Joya</li>
-        <li (mouseenter)="changeAppProjectImage(2)"><span>003</span> Standard Jobs La Joya</li>
+  <section class="projects">
+    <h2 class="app__title" data-aos="fade-up">Works</h2>
+    <div class="projects__text" data-aos="fade-right" data-aos-duration="1000">
+      <h3 class="projects__title">En proceso</h3>
+      <ul class="projects__list">
+        <li class="projects__item" (mouseenter)="changeAppProjectImage(0)"><span class="projects__count">001</span>
+          Meraki Delivery App</li>
+        <li class="projects__item" (mouseenter)="changeAppProjectImage(1)"><span class="projects__count">002</span>
+          Almacenes La Joya</li>
+        <li class="projects__item" (mouseenter)="changeAppProjectImage(2)"><span class="projects__count">003</span>
+          Standard Jobs La Joya</li>
       </ul>
     </div>
 
-    <div class="segment-image" data-aos="fade-left" data-aos-duration="1000">
-      <img id="app_projects_image" class="w3-hide-small" src="../../assets/images/meraki-delivery-app.jpg"
+    <div class="projects__image" data-aos="fade-left" data-aos-duration="1000">
+      <img #app_projects_image class="w3-hide-small projects__picture"
+        [src]="appProjects[index]?appProjects[index]:'../../assets/images/meraki-delivery-app.jpg'"
         alt="imagen de proyecto">
-      <img id="app_projects_image_mobile" class="w3-hide-large w3-hide-medium"
-        src="../../assets/images/meraki-delivery-app-mobile.jpg" alt="imagen de proyecto">
-      <figcaption>
-        <h2></h2>
-        <p>{{projectDescription}}</p>
+      <img id="app_projects_image_mobile" class="w3-hide-large w3-hide-medium projects__picture"
+        [src]="appProjectsMobile[index]?appProjectsMobile[index]:'../../assets/images/meraki-delivery-app-mobile.jpg'"
+        alt="imagen de proyecto">
+      <figcaption class="projects__caption">
+        <h2 class="projects__subtitle"></h2>
+        <p class="projects__paragraph">{{projectDescription}}</p>
       </figcaption>
     </div>
   </section>
 
-  <section class="app-segment-4">
-    <div class="app-card" data-aos="fade-up" data-aos-duration="500">
-      <span>18</span>
-      <span>Proyectos entregados</span>
+  <section class="segment segment__total segment__paddingbottom">
+    <div class="segment__card" data-aos="fade-up" data-aos-duration="500">
+      <span class="segment__number">18</span>
+      <span class="segment__card-span">Proyectos entregados</span>
     </div>
-    <div class="app-card" data-aos="fade-up" data-aos-duration="1000">
-      <span>03</span>
-      <span>Productos Meraki</span>
+    <div class="segment__card" data-aos="fade-up" data-aos-duration="1000">
+      <span class="segment__number">03</span>
+      <span class="segment__card-span">Productos Meraki</span>
     </div>
 
   </section>
