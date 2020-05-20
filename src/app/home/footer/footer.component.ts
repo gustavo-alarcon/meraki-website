@@ -17,8 +17,7 @@ export class FooterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private af: AngularFirestore,
-    //private snackbar: MatSnackBar
+    private af: AngularFirestore
   ) { }
 
   ngOnInit() {
@@ -31,16 +30,16 @@ export class FooterComponent implements OnInit {
       messege: ['', Validators.required]
     });
   }
-  
+
 
   submit(): void {
-    
+
     this.sending.next(2)
     const batch = this.af.firestore.batch();
     const ref = this.af.firestore.collection('mail').doc();
 
     let message = {
-      to: ['galarcon@meraki-s.com','mpalomino@meraki-s.com'],
+      to: ['galarcon@meraki-s.com', 'mpalomino@meraki-s.com'],
       from: this.contactFormGroup.get('mail').value,
       template: {
         name: 'email',
