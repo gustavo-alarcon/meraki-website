@@ -17,8 +17,8 @@
   margin: 0;
 }
 
-.contact-input {
+.contact__input {
+  display: block;
   max-width: 350px;
-  width: 100%;
-  padding: .5em 0em;
+  /* padding: .5em 0em; */
 }

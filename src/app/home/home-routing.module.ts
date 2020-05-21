@@ -29,6 +29,28 @@ const routes: Routes = [
           ogSiteName: '🥇 Meraki Solutions | Big data, Analítica de datos e infraestructura de datos',
           image: 'https://storage.googleapis.com/staging.meraki-solutions-web.appspot.com/uploads/meraki-solutions-big-data.jpg'
         }
+      },
+      {
+        path: 'websites',
+        loadChildren: () => import('./websites/websites.module').then(m => m.WebsitesModule),
+        data: {
+          title: '🥇 Meraki Solutions | Diseño y desarrollo de páginas web para empresas peruanas, Creación de páginas web en Arequipa.',
+          description: 'Consigue más clientes con una página web en Arequipa que refleje la calidad de tu producto y/o servicio. Comprobados casos de éxito con clientes en Arequipa',
+          ogUrl: 'https://meraki-s.com/home/websites',
+          ogSiteName: '🥇 Meraki Solutions | Diseño y desarrollo de páginas web para empresas peruanas, Creación de páginas web en Arequipa.',
+          image: 'https://storage.googleapis.com/staging.meraki-solutions-web.appspot.com/uploads/meraki-solutions-websites.jpg'
+        }
+      },
+      {
+        path: 'hosting',
+        loadChildren: () => import('./hosting/hosting.module').then(m => m.HostingModule),
+        data: {
+          title: '🥇 Meraki Solutions | Hosting Per&uacute; - Hosting en Peru - Hosting para Empresas - Alojamiento web empresarial',
+          description: 'hosting, hosting Peru, Hosting Perú, Hosting, perú, hosting economico peru, hosting profesional peru, prueba gratis',
+          ogUrl: 'https://meraki-s.com/home/hosting',
+          ogSiteName: '🥇 Meraki Solutions | Hosting Per&uacute; - Hosting en Peru - Hosting para Empresas - Alojamiento web empresarial',
+          image: 'https://storage.googleapis.com/staging.meraki-solutions-web.appspot.com/uploads/meraki-solutions-hosting.jpg'
+        }
       }
     ]
   }

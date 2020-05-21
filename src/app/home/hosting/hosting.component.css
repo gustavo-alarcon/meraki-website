@@ -1,0 +1,13 @@
+.graphic {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.graphic h3 {
+  align-self: center;
+}

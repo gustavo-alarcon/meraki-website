@@ -53,26 +53,26 @@ export class HomeComponent implements OnInit {
       this.image_container.nativeElement.style.top = -this.scrollValue * 0.5 + 'px';
 
       if (this.scrollValue >= (winHeight * 0.85)) {
-        this.navbar.nativeElement['style']['position'] = 'fixed';
-        this.navbar.nativeElement['style']['top'] = '0%'
-        this.navbar.nativeElement['style']['width'] = '66vw';
-        this.navbar.nativeElement['style']['zIndex'] = '100';
+        this.navbar.nativeElement.style.position = 'fixed';
+        this.navbar.nativeElement.style.top = '0%'
+        this.navbar.nativeElement.style.width = '66vw';
+        this.navbar.nativeElement.style.zIndex = '100';
 
-        this.nav_logo.nativeElement['style']['position'] = 'relative'
-        this.nav_logo.nativeElement['style']['display'] = 'block'
+        this.nav_logo.nativeElement.style.position = 'relative'
+        this.nav_logo.nativeElement.style.display = 'block'
 
-        this.navbar_small.nativeElement['style']['position'] = 'fixed';
-        this.navbar_small.nativeElement['style']['top'] = '0%';
-        this.navbar_small.nativeElement['style']['width'] = '82vw';
-        this.navbar_small.nativeElement['style']['zIndex'] = '100';
+        this.navbar_small.nativeElement.style.position = 'fixed';
+        this.navbar_small.nativeElement.style.top = '0%';
+        this.navbar_small.nativeElement.style.width = '82vw';
+        this.navbar_small.nativeElement.style.zIndex = '100';
 
       } else {
-        this.navbar.nativeElement['style']['position'] = 'relative';
+        this.navbar.nativeElement.style.position = 'relative';
 
-        this.nav_logo.nativeElement['style']['position'] = 'absolute'
-        this.nav_logo.nativeElement['style']['display'] = 'none'
+        this.nav_logo.nativeElement.style.position = 'absolute'
+        this.nav_logo.nativeElement.style.display = 'none'
 
-        this.navbar_small.nativeElement['style']['position'] = 'relative';
+        this.navbar_small.nativeElement.style.position = 'relative';
 
       }
     })
@@ -89,15 +89,15 @@ export class HomeComponent implements OnInit {
     }
 
     if (topic == 'websites') {
-      this.landing_image.nativeElement['style']['backgroundImage'] = 'url(../../assets/images/web-white.jpg)';
+      this.landing_image.nativeElement.style.backgroundImage = 'url(../../assets/images/web-white.jpg)';
     }
 
     if (topic == 'i2ot') {
-      this.landing_image.nativeElement['style']['backgroundImage'] = 'url(../../assets/images/i2ot-white.jpg)';
+      this.landing_image.nativeElement.style.backgroundImage = 'url(../../assets/images/i2ot-white.jpg)';
     }
 
     if (topic == 'about-us') {
-      this.landing_image.nativeElement['style']['backgroundImage'] = 'url(../../assets/images/i2ot-white.jpg)';
+      this.landing_image.nativeElement.style.backgroundImage = 'url(../../assets/images/i2ot-white.jpg)';
     }
 
   }

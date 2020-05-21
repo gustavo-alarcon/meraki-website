@@ -56,60 +56,53 @@ export class ApplicationsComponent implements OnInit {
     private dialog: MatDialog,
     private snackbar: MatSnackBar,
     private _seoService: SeoService,
-    private router: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
 
-    this.router.data
-      .pipe(
-        take(1)
-      )
-      .subscribe(data => {
-        if (data) {
-          this._seoService.updateTitle(data['title']);
-          this._seoService.updateDescription(data['description']);
-          this._seoService.updateOgTitle(data['title']);
-          this._seoService.updateOgDescription(data['description']);
-          this._seoService.updateOgUrl(data['ogUrl']);
-          this._seoService.updateOgSiteName(data['ogSiteName']);
-          this._seoService.updateOgImage(data['image']);
-          this._seoService.updateTwitterTitle(data['title']);
-          this._seoService.updateTwitterDescription(data['description']);
-          this._seoService.updateTwitterImage(data['image']);
-        }
+    // this.router.data
+    //   .pipe(
+    //     take(1)
+    //   )
+    //   .subscribe(data => {
+    //     if (data) {
+    //       this._seoService.updateTitle(data['title']);
+    //       this._seoService.updateDescription(data['description']);
+    //       this._seoService.updateOgTitle(data['title']);
+    //       this._seoService.updateOgDescription(data['description']);
+    //       this._seoService.updateOgUrl(data['ogUrl']);
+    //       this._seoService.updateOgSiteName(data['ogSiteName']);
+    //       this._seoService.updateOgImage(data['image']);
+    //       this._seoService.updateTwitterTitle(data['title']);
+    //       this._seoService.updateTwitterDescription(data['description']);
+    //       this._seoService.updateTwitterImage(data['image']);
+    //     }
 
-      })
-    // this.router.events.pipe(
-    //   filter((event) => event instanceof NavigationEnd),
-    //   tap(() => console.log('navigation ends')),
-    //   map(() => this.activatedRoute),
-    //   map(route => {
-    //     console.log(route);
-    //     while (route.firstChild) route = route.firstChild;
-    //     return route;
-    //   }),
-    //   filter((route) => route.outlet === 'primary'),
-    //   mergeMap((route) => route.data)
-    //  )
-    //  .subscribe((event) => {
-    //    console.log(event['title']);
-    // this._seoService.updateTitle(event['title']);
-    // this._seoService.updateDescription(event['description']);
-    // this._seoService.updateOgTitle(event['title']);
-    // this._seoService.updateOgDescription(event['description']);
-    // this._seoService.updateOgUrl(event['ogUrl']);
-    // this._seoService.updateOgSiteName(event['ogSiteName']);
-    // this._seoService.updateOgImage(event['image']);
-    // this._seoService.updateTwitterTitle(event['title']);
-    // this._seoService.updateTwitterDescription(event['description']);
-    // this._seoService.updateTwitterImage(event['image']);
-    //  }); 
-  }
-
-  ngAfterViewInit() {
-    // this.app_proj_image = document.getElementById('app_projects_image');
-    // this.app_proj_image_mobile = document.getElementById('app_projects_image_mobile');
+    //   })
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map(() => this.activatedRoute),
+      map(route => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      }),
+      filter((route) => route.outlet === 'primary'),
+      mergeMap((route) => route.data)
+    )
+      .subscribe((event) => {
+        this._seoService.updateTitle(event['title']);
+        this._seoService.updateDescription(event['description']);
+        this._seoService.updateOgTitle(event['title']);
+        this._seoService.updateOgDescription(event['description']);
+        this._seoService.updateOgUrl(event['ogUrl']);
+        this._seoService.updateOgSiteName(event['ogSiteName']);
+        this._seoService.updateOgImage(event['image']);
+        this._seoService.updateTwitterTitle(event['title']);
+        this._seoService.updateTwitterDescription(event['description']);
+        this._seoService.updateTwitterImage(event['image']);
+      });
   }
 
   changeAppProjectImage(index: number) {

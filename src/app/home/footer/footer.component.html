@@ -2,9 +2,9 @@
     <div class="services">
       <h3 class="services__title">Servicios</h3>
       <ul class="services__list">
-        <li class="services__item" routerLinkActive="services__item--active" routerLink="applications">Aplicaciones</li>
-        <li class="services__item" routerLinkActive="services__item--active" routerLink="big-data">Big Data</li>
-        <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">Websites</li>
+        <li class="services__item" routerLinkActive="services__item--active" routerLink="applications" aria-label="aplicaciones pwa, aplicaciones moviles">Aplicaciones</li>
+        <li class="services__item" routerLinkActive="services__item--active" routerLink="big-data" aria-label="big data, analítica de datos">Big Data</li>
+        <li class="services__item" routerLinkActive="services__item--active" routerLink="websites" aria-label="páginas web, hosting, dominios, ssl">Websites</li>
         <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">I2OT</li>
         <li class="services__item" matTooltip="En actualización" aria-label="link en actualización">Nosotros</li>
       </ul>
@@ -29,7 +29,7 @@
   
         <div class="footer-contact__actions">
           <span class="footer-contact__space"></span>
-          <button mat-raised-button color="secondary" (click)="submit()" [disabled]="(sending$ | async) == 2" aria-label="submit button">
+          <button mat-raised-button color="accent" (click)="submit()" [disabled]="(sending$ | async) == 2" aria-label="submit button">
             <span *ngIf="(sending$ | async) == 1" >Enviar</span>
             <span *ngIf="(sending$ | async) == 2">Enviando...</span>
           </button>
