@@ -34,21 +34,16 @@
   justify-content: space-evenly;
 }
 
-.segment__paddingtop {
+.segment--paddingtop {
   padding-top: 10%;
 }
 
-.segment__paddingbottom {
+.segment--paddingbottom {
   padding-bottom: 20%;
 }
 
-.segment__margintop {
+.segment--margintop {
   margin-top: 10%;
-}
-
-.segment__ap3 {
-  padding: 25% 0 10% 0;
-  margin-bottom: 1em;
 }
 
 .segment__text {

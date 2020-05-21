@@ -6,8 +6,9 @@
   <div class="w3-col s10 m10 l8" style="height:100vh">
     <div class="landing">
       <div class="landing__partner" data-aos="fade-left">
-        <a href="https://cloud.withgoogle.com/partners/detail/?id=meraki-solutions&hl=es-419" target="_blank" rel="noopener"><img
-            src="../../assets/images/partner.png" class="landing__partner-img" alt="google cloud partner"></a>
+        <a href="https://cloud.withgoogle.com/partners/detail/?id=meraki-solutions&hl=es-419" target="_blank"
+          rel="noopener"><img src="../../assets/images/partner.png" class="landing__partner-img"
+            alt="google cloud partner"></a>
         <a href="https://greengeeks.com/track/merakisolutions" target="_blank" rel="noopener"><img
             src="../../assets/images/green-tag-2.png" class="landing__partner-img" alt="green geeks partner"></a>
       </div>
@@ -15,7 +16,8 @@
       <div class="landing__title" data-aos="fade-up" data-aos-duration="1000">
         <p class="landing__paragraph1">Un aliado en soluciones tecnológicas</p>
         <img src="../../assets/images/letters.svg" class="landing__bigimg" alt="meraki solutions logo">
-        <p class="landing__paragraph2">La tecnología es una ciencia, pero conseguir que las personas la usen es un arte </p>
+        <p class="landing__paragraph2">La tecnología es una ciencia, pero conseguir que las personas la usen es un arte
+        </p>
         <p style="color: #f8bb16; margin-top: 2em;" class="landing__paragraph3"><small>Mike Arauz</small></p>
       </div>
       <div #ms_image_container class="landing__image-container" data-aos="fade-right" data-aos-duration="1000">
@@ -24,11 +26,13 @@
 
       <div #nav_landing class="landing__navbar w3-hide-small">
         <nav class="landing__nav">
-          <li class="landing__navItem landing__logo" #nav_logo data-aos="fade-in"><a href="#ms_background"><img src="../../assets/images/meraki-logo.svg"
-                alt="meraki solutions logo" style="height: 40px;"></a></li>
+          <li class="landing__navItem landing__logo" #nav_logo data-aos="fade-in"><a href="#ms_background"><img
+                src="../../assets/images/meraki-logo.svg" alt="meraki solutions logo" style="height: 40px;"></a></li>
 
-          <li class="landing__link" (click)="changeTopic('applications')" routerLinkActive="landing__link--active"  routerLink="applications">Aplicaciones</li>
-          <li class="landing__link" (click)="changeTopic('big-data')" routerLinkActive="landing__link--active" routerLink="big-data">Big Data</li>
+          <li class="landing__link" (click)="changeTopic('applications')" routerLinkActive="landing__link--active"
+            routerLink="applications">Aplicaciones</li>
+          <li class="landing__link" (click)="changeTopic('big-data')" routerLinkActive="landing__link--active"
+            routerLink="big-data">Big Data</li>
           <li class="landing__link" matTooltip="En actualización" aria-label="link en actualización"> Websites</li>
           <li class="landing__link" matTooltip="En actualización" aria-label="link en actualización"> I2OT</li>
           <li class="landing__link" matTooltip="En actualización" aria-label="link en actualización"> Nosotros</li>
@@ -48,11 +52,16 @@
           </button>
 
           <mat-menu #appMenu="matMenu">
-            <button mat-menu-item (click)="changeTopic('applications')" aria-label="aplicaciones" routerLink="applications">Aplicaciones</button>
-            <button mat-menu-item (click)="changeTopic('big-data')" aria-label="big data" routerLink="big-data">Big Data</button>
-            <button mat-menu-item disabled matTooltip="En actualización" aria-label="link en actualización">Websites</button>
-            <button mat-menu-item disabled matTooltip="En actualización" aria-label="link en actualización">I2OT</button>
-            <button mat-menu-item disabled matTooltip="En actualización" aria-label="link en actualización">Nosotros</button>
+            <button mat-menu-item (click)="changeTopic('applications')" aria-label="aplicaciones"
+              routerLink="applications">Aplicaciones</button>
+            <button mat-menu-item (click)="changeTopic('big-data')" aria-label="big data" routerLink="big-data">Big
+              Data</button>
+            <button mat-menu-item disabled matTooltip="En actualización"
+              aria-label="link en actualización">Websites</button>
+            <button mat-menu-item disabled matTooltip="En actualización"
+              aria-label="link en actualización">I2OT</button>
+            <button mat-menu-item disabled matTooltip="En actualización"
+              aria-label="link en actualización">Nosotros</button>
             <!-- <button mat-menu-item (click)="changeTopic('websites')" aria-label="website" routerLink="websites" disabled>Websites</button>
             <button mat-menu-item (click)="changeTopic('i2ot')" aria-label="i2ot" routerLink="i2ot" disabled>I2OT</button>
             <button mat-menu-item (click)="changeTopic('about-us')" aria-label="nosotros" routerLink="about-us" disabled>Nosotros</button> -->
@@ -79,4 +88,3 @@
 </div>
 
 <app-footer></app-footer>
-   

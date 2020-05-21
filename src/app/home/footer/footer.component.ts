@@ -17,8 +17,7 @@ export class FooterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private af: AngularFirestore,
-    //private snackbar: MatSnackBar
+    private af: AngularFirestore
   ) { }
 
   ngOnInit() {
@@ -31,40 +30,43 @@ export class FooterComponent implements OnInit {
       messege: ['', Validators.required]
     });
   }
-  
+
 
   submit(): void {
-    
-    this.sending.next(2)
-    const batch = this.af.firestore.batch();
-    const ref = this.af.firestore.collection('mail').doc();
+    if (this.contactFormGroup.valid) {
 
-    let message = {
-      to: ['galarcon@meraki-s.com','mpalomino@meraki-s.com'],
-      from: this.contactFormGroup.get('mail').value,
-      template: {
-        name: 'email',
-        data: {
-          message: this.contactFormGroup.get('messege').value.split(/\r?\n/g).filter(option => !!option)
+      this.sending.next(2)
+
+      const batch = this.af.firestore.batch();
+      const ref = this.af.firestore.collection('mail').doc();
+
+      let message = {
+        to: ['galarcon@meraki-s.com', 'mpalomino@meraki-s.com'],
+        from: this.contactFormGroup.get('mail').value,
+        template: {
+          name: 'email',
+          data: {
+            messege: this.contactFormGroup.get('messege').value,
+            email: this.contactFormGroup.get('mail').value
+          }
         }
       }
+
+      batch.set(ref, message)
+
+      batch.commit().then(() => {
+        this.sendMessage()
+
+      }).catch(err => {
+        console.log(err);
+      })
     }
-
-    batch.set(ref, message)
-
-    batch.commit().then(() => {
-      this.sendMessage()
-
-    }).catch(err => {
-      console.log(err);
-
-    })
-    // 
   }
 
   sendMessage() {
     const batch = this.af.firestore.batch();
     const ref = this.af.firestore.collection('mail').doc();
+    const refCustomer = this.af.firestore.collection('customers').doc();
 
     let mess2 = {
       to: [this.contactFormGroup.get('mail').value],
@@ -74,6 +76,16 @@ export class FooterComponent implements OnInit {
     }
 
     batch.set(ref, mess2)
+
+    batch.set(refCustomer, {
+      email: this.contactFormGroup.get('mail').value,
+      messege: this.contactFormGroup.get('messege').value,
+      type: 'Consulta simple',
+      createDate: new Date()
+
+    })
+
+
     batch.commit().then(() => {
       this.sending.next(1)
       this.contactFormGroup.reset()
