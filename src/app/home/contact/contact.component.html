@@ -1,4 +1,5 @@
 <h2 class="contact__title" mat-dialog-title>{{subject}}</h2>
+<mat-progress-bar mode="buffer" *ngIf="sending$ | async"></mat-progress-bar>
 <mat-dialog-content class="w3-margin-bottom">
   <p class="contact__paragraph">Nos pondremos en contacto contigo para conversar sobre tu proyecto y los desafios que
     enfrentas.
@@ -40,7 +41,7 @@
 
 <mat-dialog-actions align="end" class="w3-margin-bottom">
   <button mat-raised-button mat-dialog-close class="w3-margin-right">Cancelar</button>
-  <button mat-raised-button color="accent" (click)="send()">Enviar</button>
+  <button mat-raised-button color="accent" (click)="send()" [disabled]="sending$|async">Enviar</button>
 </mat-dialog-actions>
 <!--
 <div style="max-width:600px;">

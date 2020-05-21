@@ -34,18 +34,20 @@ export class FooterComponent implements OnInit {
 
   submit(): void {
     if (this.contactFormGroup.valid) {
-      
+
       this.sending.next(2)
+
       const batch = this.af.firestore.batch();
       const ref = this.af.firestore.collection('mail').doc();
 
       let message = {
-        to: ['mocharan@meraki-s.com'],
+        to: ['galarcon@meraki-s.com', 'mpalomino@meraki-s.com'],
         from: this.contactFormGroup.get('mail').value,
         template: {
           name: 'email',
           data: {
-            message: this.contactFormGroup.get('messege').value.split(/\r?\n/g).filter(option => !!option)
+            messege: this.contactFormGroup.get('messege').value,
+            email: this.contactFormGroup.get('mail').value
           }
         }
       }
@@ -78,7 +80,9 @@ export class FooterComponent implements OnInit {
     batch.set(refCustomer, {
       email: this.contactFormGroup.get('mail').value,
       messege: this.contactFormGroup.get('messege').value,
-      type: 'Consulta simple'
+      type: 'Consulta simple',
+      createDate: new Date()
+
     })
 
 

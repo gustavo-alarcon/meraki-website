@@ -42,34 +42,52 @@ export class ContactComponent implements OnInit {
   send(): void {
     // TO DO: ENVIAR CORREO AL CLIENTE, GUARDAR DATOS EN FIRESTORE
 
-    this.sending.next(true)
-    const batch = this.af.firestore.batch();
-    const ref = this.af.firestore.collection('mail').doc();
+    if (this.contactFormGroup.valid) {
+      this.sending.next(true)
+      const batch = this.af.firestore.batch();
+      const ref = this.af.firestore.collection('mail').doc();
+      const refCustomer = this.af.firestore.collection('customers').doc();
 
-    let message = {
-      to: ['mocharan@meraki-s.com'],
-      from: this.contactFormGroup.get('mail').value,
-      template: {
-        name: 'adviser',
-        data: {
-          name: this.contactFormGroup.get('name').value,
-          mail: this.contactFormGroup.get('mail').value,
-          phone: this.contactFormGroup.get('phone').value,
-          company: this.contactFormGroup.get('company').value,
-          message: this.contactFormGroup.get('messege').value.split(/\r?\n/g).filter(option => !!option)
+      let message = {
+        to: ['galarcon@meraki-s.com', 'mpalomino@meraki-s.com'],
+        from: this.contactFormGroup.get('mail').value,
+        template: {
+          name: 'email',
+          data: {
+            name: this.contactFormGroup.get('name').value,
+            email: this.contactFormGroup.get('mail').value,
+            phone: this.contactFormGroup.get('phone').value,
+            company: this.contactFormGroup.get('company').value,
+            messege: this.contactFormGroup.get('messege').value,
+            service: this.subject
+          }
         }
       }
+
+      batch.set(ref, message)
+
+      let newCustomer = {
+        name: this.contactFormGroup.get('name').value,
+        email: this.contactFormGroup.get('mail').value,
+        phone: this.contactFormGroup.get('phone').value,
+        company: this.contactFormGroup.get('company').value,
+        messege: this.contactFormGroup.get('messege').value,
+        type: this.subject,
+        createDate: new Date()
+      }
+
+      batch.set(refCustomer, newCustomer)
+
+
+      batch.commit().then(() => {
+        this.sendMessage()
+
+      }).catch(err => {
+
+        console.log(err);
+
+      })
     }
-
-    batch.set(ref, message)
-
-    batch.commit().then(() => {
-      this.sendMessage()
-
-    }).catch(err => {
-      console.log(err);
-
-    })
   }
 
   sendMessage() {
@@ -79,7 +97,10 @@ export class ContactComponent implements OnInit {
     let mess2 = {
       to: [this.contactFormGroup.get('mail').value],
       template: {
-        name: 'thanks'
+        name: 'thanks',
+        data: {
+          name: this.contactFormGroup.get('name').value
+        }
       }
     }
 

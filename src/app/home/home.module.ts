@@ -16,7 +16,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { ContactComponent } from './contact/contact.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatInputModule,
     MatRippleModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatProgressBarModule
   ],
   entryComponents: [
     ContactComponent
