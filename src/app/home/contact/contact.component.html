@@ -1,31 +1,38 @@
 <h2 class="contact__title" mat-dialog-title>{{subject}}</h2>
 <mat-dialog-content class="w3-margin-bottom">
-  <p class="contact__paragraph">Nos pondremos en contacto contigo para conversar sobre tu proyecto y los desafios que enfrentas. 
-    Además, te brindaremos de forma gratuita toda la orientación que necesites, para saber si es exactamente este servicio el que estás buscando.</p>
+  <p class="contact__paragraph">Nos pondremos en contacto contigo para conversar sobre tu proyecto y los desafios que
+    enfrentas.
+    Además, te brindaremos de forma gratuita toda la orientación que necesites, para saber si es exactamente este
+    servicio el que estás buscando.</p>
   <form [formGroup]="contactFormGroup">
     <mat-form-field class="contact__input">
       <mat-label>Nombre y Apellido</mat-label>
-      <input matInput type="text" formControlName="name" placeholder="John Doe" aria-label="campo de nombre y apellido" autocomplete="off">
+      <input matInput type="text" formControlName="name" placeholder="John Doe" aria-label="campo de nombre y apellido"
+        autocomplete="off">
       <mat-hint>*campo requerido</mat-hint>
     </mat-form-field><br>
     <mat-form-field class="contact__input">
       <mat-label>Correo</mat-label>
-      <input matInput type="mail" formControlName="mail" placeholder="nombre@empresa.com" aria-label="campo de correo" autocomplete="off">
+      <input matInput type="mail" formControlName="mail" placeholder="nombre@empresa.com" aria-label="campo de correo"
+        autocomplete="off">
       <mat-hint>*campo requerido</mat-hint>
     </mat-form-field><br>
     <mat-form-field class="contact__input">
       <mat-label>Teléfono</mat-label>
-      <input matInput type="text" formControlName="phone" placeholder="966565878" aria-label="campo de teléfono" autocomplete="off">
+      <input matInput type="text" formControlName="phone" placeholder="966565878" aria-label="campo de teléfono"
+        autocomplete="off">
       <mat-hint>*campo requerido</mat-hint>
     </mat-form-field><br>
     <mat-form-field class="contact__input">
       <mat-label>Empresa</mat-label>
-      <input matInput type="text" formControlName="company" placeholder="SpaceX" aria-label="campo de empresa" autocomplete="off">
+      <input matInput type="text" formControlName="company" placeholder="SpaceX" aria-label="campo de empresa"
+        autocomplete="off">
       <mat-hint>*campo requerido</mat-hint>
     </mat-form-field><br>
     <mat-form-field class="contact__input">
       <mat-label>Mensaje</mat-label>
-      <textarea matInput cols="5" rows="5" formControlName="messege" placeholder="Cuéntanos un poco sobre tu proyecto" aria-label="campo de empresa" autocomplete="off"></textarea>
+      <textarea matInput cols="5" rows="5" formControlName="messege" placeholder="Cuéntanos un poco sobre tu proyecto"
+        aria-label="campo de empresa" autocomplete="off"></textarea>
       <mat-hint>*campo requerido</mat-hint>
     </mat-form-field><br>
   </form>
@@ -35,3 +42,44 @@
   <button mat-raised-button mat-dialog-close class="w3-margin-right">Cancelar</button>
   <button mat-raised-button color="accent" (click)="send()">Enviar</button>
 </mat-dialog-actions>
+<!--
+<div style="max-width:600px;">
+
+  <div style="font-size: 14px;">{{#each message}} <p>{{this}}</p>{{/each}}</div>
+</div>
+
+<table align="center" border="0" style="border: 1px solid silver" cellpadding="0" cellspacing="0" width="700">
+  <tr>
+    <td>
+      <p style="font-size: 16px; padding: 10px 16px 0px;"> <strong>{{info.createdBy.displayName}}</strong> tuvo la
+        siguiente observación durante la inspección programada en el área <strong>{{info.area.name}}</strong>, y asignó
+        al área <strong>{{info.responsibleArea.name}}</strong> como responsable </p>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0px 30px 0px 30px; font-size: 14px;">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td width="310" valign="top">
+            <p> <strong>Tipo de observación :</strong> {{info.kindOfObservation}} </p>
+          </td>
+          <td style="font-size: 0; line-height: 0;" width="20"> &nbsp; </td>
+          <td width="310" valign="top">
+            <p> <strong>Causa:</strong> {{info.cause}} </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0px 30px 40px 30px; font-size: 14px;">
+      <p><strong>Descripción de la observación: </strong></p>
+      <p style="margin-left: 15px;">{{info.observationDescription}}</p>
+      <p><strong>Recomendaciones: </strong></p>
+      <p style="margin-left: 15px;">{{info.recommendationDescription}}</p>
+    </td>
+  </tr> {{#if image}} <tr>
+    <td align="center" style="padding-bottom: 40px;"> <a href="{{image}}" target="_blank"> <img width="400"
+          src="{{image}}" alt=""> </a> </td>
+  </tr>{{/if}}
+</table>-->
