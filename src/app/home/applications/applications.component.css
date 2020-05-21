@@ -64,6 +64,8 @@
 
 .segment__picture {
   position: relative;
+  width: 90%;
+  margin: 1.5em 0em;
   left: 50%;
   transform: translateX(-50%);
 }
