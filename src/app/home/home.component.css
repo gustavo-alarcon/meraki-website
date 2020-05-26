@@ -1,3 +1,27 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header__fill {
+  flex: auto 1 1;
+}
+
+.header__contact {
+  display: flex;
+  align-items: center;
+}
+
+.header__icon {
+  vertical-align: middle;
+  margin-right: 0.5em;
+  color: goldenrod;
+}
+
+.header__text {
+  color: white;
+}
+
 .landing {
   position: relative;
   height: 100vh;
@@ -162,6 +186,11 @@
 }
 
 @media(max-width:600px) {
+  .header__text {
+    font-size: small;
+    margin: 1em 0em;
+  }
+
   .landing__paragraph2{
     top: 50%;
     font-size: 1.5em;
