@@ -1,0 +1,13 @@
+<mat-sidenav-container class="sidenav__container">
+    <mat-sidenav mode="side" [opened]="sidenav.adminSidenav">
+        <div class="menu__container">
+            <img class="menu__logo" src="../../assets/images/meraki-logo.svg" alt="meraki-logo"><br>
+            <button class="menu__button" mat-button routerLink="transactions">
+                <mat-icon>money_attach</mat-icon> Transacciones
+            </button>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content style="height: 100vh;">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

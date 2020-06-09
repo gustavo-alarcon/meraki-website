@@ -1,0 +1,78 @@
+<div class="w3-row container">
+    <div class="w3-col s1 m1 l2">
+        <p></p>
+    </div>
+    <div class="w3-col s10 m10 l8">
+        <div class="header">
+            <button class="header__menu" mat-icon-button (click)="toggleMenu()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <h2 class="header__title">Transacciones</h2>
+        </div>
+
+        <div>
+            <form class="form" [formGroup]="transactionFormGroup">
+                <mat-form-field class="form__input" appearance="outline">
+                    <mat-label>Tipo de movimiento</mat-label>
+                    <mat-select formControlName="type">
+                        <mat-option value="ingreso">Ingreso</mat-option>
+                        <mat-option value="salida">Salida</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="form__input" appearance="outline">
+                    <mat-label>Fecha de operación</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="form__input" appearance="outline">
+                    <mat-label>Cantidad</mat-label>
+                    <input matInput type="number" step="0.01" min="0" formControlName="amount" placeholder="S/.100.00"
+                        autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" appearance="outline">
+                    <mat-label>Desc. BCP</mat-label>
+                    <input matInput type="text" formControlName="descBCP" placeholder="TRANSF.034" autocomplete="off">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" appearance="outline">
+                    <mat-label>Descripción</mat-label>
+                    <input matInput type="text" formControlName="description" placeholder="Referencia personal"
+                        autocomplete="off">
+                </mat-form-field>
+
+                <button class="form__button" mat-raised-button color="accent" (click)="addTransaction()">
+                    <mat-icon>add</mat-icon> Agregar
+                </button>
+            </form>
+        </div>
+
+        <mat-divider></mat-divider>
+        <div class="list">
+            <ng-container *ngIf="transactions$ | async as transactions">
+                <div class="list__item mat-elevation-z8" *ngFor="let transaction of transactions">
+                    <mat-icon class="list__icon">money_attach</mat-icon>
+                    <div class="list__date">
+                        <span>{{transaction.date.seconds*1000 | date : 'dd'}}</span><br>
+                        <span>{{transaction.date.seconds*1000 | date : 'MMM'}}</span><br>
+                        <span>{{transaction.date.seconds*1000 | date : 'yyyy'}}</span><br>
+                    </div>
+                    <p class="list__text">{{transaction.descBCP}}</p>
+                    <p class="list__text"
+                        [ngClass]="{'list__text--income': transaction.type === 'ingreso', 'list__text--outflow': transaction.type === 'salida'}">
+                        {{transaction.amount | currency : 'S/.'}}</p>
+                    <p class="list__text">{{transaction.description}}</p>
+                    <span class="list__fill"></span>
+                    <button mat-icon-button (click)="deleteTransaction(transaction.id)"><mat-icon>remove_circle</mat-icon></button>
+                </div>
+            </ng-container>
+        </div>
+
+    </div>
+    <div class="w3-col s1 m1 l2">
+        <p></p>
+    </div>
+</div>

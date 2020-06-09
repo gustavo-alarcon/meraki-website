@@ -1,0 +1,31 @@
+.sidenav__container {
+    min-height: 100vh;
+}
+
+.menu__container {
+    padding: 1em 1em;
+    background: #000000;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.mat-drawer {
+    background: #000000;
+}
+
+.menu__logo {
+    margin-top: 2em;
+    height: 60px;
+}
+
+.menu__button {
+    display: block;
+    width: 100%;
+    color: white;
+    margin-top: 1em;
+    text-align: left;
+}
+
+.menu__button:nth-of-type(1) {
+    margin-top: 2em;
+}

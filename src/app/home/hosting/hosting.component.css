@@ -11,3 +11,75 @@
 .graphic h3 {
   align-self: center;
 }
+
+.mainContainer {
+  position: relative;
+  min-height: 100vh;
+}
+
+.backgroundText {
+  position: absolute;
+  top: -3%;
+  left: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15vw;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.segment {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.segment--first {
+  padding-top: 10%;
+}
+
+.segment__description {
+  position: relative;
+  padding: 0 2em;
+  width: 50%;
+  align-self: center;
+}
+
+.segment__title {
+  font-size: 3.5em;
+  color: #fff;
+}
+
+.segment__descImage {
+  position: relative;
+  margin: 1.5em 0em;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.segment__rightImage, .segment__leftImage{
+  position: relative;
+  width: 50%;
+  padding: 0 2em;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+  transition: ease-in-out 0.3s;
+}
+
+.segment__rightImage:hover {
+  transform: skew(-5deg, 5deg) scale(1.1);
+}
+
+.segment__leftImage:hover {
+  transform: skew(5deg, -5deg) scale(1.1);
+}
+
+.segment__image {
+  width: 100%;
+}
+
+.segment__description--order {
+  order: 2;
+}

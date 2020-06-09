@@ -102,4 +102,12 @@ export class HomeComponent implements OnInit {
 
   }
 
+  signin(): void {
+    //
+    if (true) {
+      this.route.navigateByUrl('/admin');
+    }
+    
+  }
+
 }
