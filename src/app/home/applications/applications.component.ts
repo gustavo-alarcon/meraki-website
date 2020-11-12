@@ -27,26 +27,22 @@ export class ApplicationsComponent implements OnInit {
   @ViewChild('app_projects_image_mobile', { static: true }) app_proj_image_mobile: ElementRef;
 
   appProjects: Array<string> = [
+    '../../assets/images/bg-disto.jpg',
     '../../assets/images/meraki-delivery-app.jpg',
-    '../../assets/images/almacenes-la-joya.jpg',
-    '../../assets/images/standard-jobs-la-joya.jpg'
   ]
 
   appProjectsMobile: Array<string> = [
+    '../../assets/images/bg-disto-mobile.jpg',
     '../../assets/images/meraki-delivery-app-mobile.jpg',
-    '../../assets/images/almacenes-la-joya-mobile.jpg',
-    '../../assets/images/standard-jobs-la-joya-mobile.jpg',
   ]
 
   appProjectContent: Array<string> = [
+    'Distribuidora torres es una quesería super diferente con sede en Lima, tienen productos Arequipeños seleccionados \
+    , un servicio al cliente exclusivo y pronto una super plataforma de venta que transmitirá todo su calor y amor al queso !',
+
     'Cuando la pandemia llego, también llegaron necesidades que atender. Meraki Delivery App es una herramienta \
     digital que ayuda a todo tipo de empresas a gestionar sus pedidos de delivery y dar un mejor servicio a sus clientes',
 
-    'Como proveedores de software, siempre hemos ayudado a Ferreyros La Joya a implementar iniciativas de software y sabemos que los almacenes \
-    son de vital importancia para la operación, así que estamos creando una herramienta digital a medida que optimice la logística interna',
-
-    'Los tiempos standard o standard jobs, son de vital importancia para medir y ejecutar la operación con precisión, así que para mantener el trabajo \
-    de forma cronométrica, estamos desarrollando una aplicación que le permita a los supervisores tener una vista de planta de todos los tiempos en taller'
   ]
 
   projectDescription: string = this.appProjectContent[0];
@@ -104,9 +100,9 @@ export class ApplicationsComponent implements OnInit {
         this._seoService.updateTwitterImage(event['image']);
       });
   }
-
+  
   changeAppProjectImage(index: number) {
-    console.log(index);
+    // console.log(index);
     this.index = index
     this.projectDescription = this.appProjectContent[index];
   }
